@@ -57,7 +57,7 @@ def load_sroie():
             docs.append({
                 "id": f"sroie/{box.stem}",
                 "dataset": "sroie", "lang": "en", "split": split,
-                "image_path": str((base / split / "img" / f"{box.stem}.jpg").relative_to(ROOT)),
+                "image_path": (base / split / "img" / f"{box.stem}.jpg").relative_to(ROOT).as_posix(),
                 "text": lines_to_text(items),
                 "gold": {
                     "seller": ent.get("company"),

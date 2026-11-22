@@ -386,7 +386,12 @@ s.addNotes("Tóm tắt ba kết luận chính và hướng phát triển. Cảm 
 // ---------------------------------------------------------------- write
 const out = path.join(__dirname, "..", "Slide_TrichRutThongTin_HoaDon.pptx");
 pres.writeFile({ fileName: out }).then(async () => {
-  const { applyTheme } = require(process.env.PPTX_SKILL + "/scripts/apply_theme.js");
-  await applyTheme(out, THEME);
+  // Ghi bảng màu vào theme của file (cần script apply_theme.js của skill pptx; không có thì dùng màu mặc định)
+  if (process.env.PPTX_SKILL) {
+    const { applyTheme } = require(process.env.PPTX_SKILL + "/scripts/apply_theme.js");
+    await applyTheme(out, THEME);
+  } else {
+    console.warn("PPTX_SKILL chưa đặt – bỏ qua applyTheme (slide dùng bảng màu mặc định của Office).");
+  }
   console.log("Wrote", out, SN, "slides");
 });
