@@ -1,0 +1,16 @@
+# Bí mật (API keys)
+.env
+
+# Môi trường / thư viện cài lại được
+.venv/
+__pycache__/
+report/build/node_modules/
+
+# Dataset gốc (tải lại từ Kaggle, ~3.3GB) – chỉ giữ kết quả OCR tự chạy trên Colab
+data/raw/*
+!data/raw/mcocr/
+data/raw/mcocr/*
+!data/raw/mcocr/mcocr_ocr.jsonl
+
+# File tạm của Office
+~$*

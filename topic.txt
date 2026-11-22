@@ -1,0 +1,1 @@
+Trích rút thông tin từ tài liệu → JSON/CSDL ((API / model public))

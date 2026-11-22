@@ -1,0 +1,6677 @@
+{
+ "methods": [
+  {
+   "code": "M0",
+   "method": "regex",
+   "label": "Regex (luật)",
+   "kind": "Baseline"
+  },
+  {
+   "code": "M1",
+   "method": "deepseek-zs",
+   "label": "DeepSeek zero-shot",
+   "kind": "API"
+  },
+  {
+   "code": "M2",
+   "method": "deepseek-fs",
+   "label": "DeepSeek few-shot",
+   "kind": "API"
+  },
+  {
+   "code": "M3",
+   "method": "qwen2.5-3b",
+   "label": "Qwen2.5-3B (CPU)",
+   "kind": "Model public"
+  },
+  {
+   "code": "M4",
+   "method": "qwen2.5-7b",
+   "label": "Qwen2.5-7B (Colab GPU)",
+   "kind": "Model public"
+  }
+ ],
+ "datasets": {
+  "sroie": {
+   "label": "SROIE (EN)",
+   "by_method": {
+    "regex": {
+     "n": 347,
+     "f1": {
+      "seller": 64.0,
+      "address": 56.5,
+      "date": 90.3,
+      "total": 64.4
+     },
+     "precision": {
+      "seller": 64.0,
+      "address": 56.5,
+      "date": 90.9,
+      "total": 65.5
+     },
+     "recall": {
+      "seller": 64.0,
+      "address": 56.5,
+      "date": 89.6,
+      "total": 63.4
+     },
+     "macro_f1": 68.8,
+     "soft_macro_f1": 72.9,
+     "soft_f1": {
+      "seller": 65.1,
+      "address": 71.8,
+      "date": 90.3,
+      "total": 64.4
+     },
+     "valid_json": 100.0,
+     "latency_ms_median": 0,
+     "latency_ms_mean": 0
+    },
+    "deepseek-zs": {
+     "n": 347,
+     "f1": {
+      "seller": 70.0,
+      "address": 88.8,
+      "date": 99.1,
+      "total": 97.8
+     },
+     "precision": {
+      "seller": 70.0,
+      "address": 88.8,
+      "date": 99.1,
+      "total": 98.0
+     },
+     "recall": {
+      "seller": 70.0,
+      "address": 88.8,
+      "date": 99.1,
+      "total": 97.7
+     },
+     "macro_f1": 88.9,
+     "soft_macro_f1": 90.5,
+     "soft_f1": {
+      "seller": 70.9,
+      "address": 94.2,
+      "date": 99.1,
+      "total": 97.8
+     },
+     "valid_json": 100.0,
+     "latency_ms_median": 978,
+     "latency_ms_mean": 1036
+    },
+    "deepseek-fs": {
+     "n": 347,
+     "f1": {
+      "seller": 81.8,
+      "address": 88.5,
+      "date": 99.1,
+      "total": 98.6
+     },
+     "precision": {
+      "seller": 81.8,
+      "address": 88.5,
+      "date": 99.1,
+      "total": 98.6
+     },
+     "recall": {
+      "seller": 81.8,
+      "address": 88.5,
+      "date": 99.1,
+      "total": 98.6
+     },
+     "macro_f1": 92.0,
+     "soft_macro_f1": 93.9,
+     "soft_f1": {
+      "seller": 83.0,
+      "address": 94.8,
+      "date": 99.1,
+      "total": 98.6
+     },
+     "valid_json": 100.0,
+     "latency_ms_median": 1036,
+     "latency_ms_mean": 1053
+    },
+    "qwen2.5-3b": {
+     "n": 347,
+     "f1": {
+      "seller": 65.7,
+      "address": 68.9,
+      "date": 99.1,
+      "total": 90.6
+     },
+     "precision": {
+      "seller": 65.7,
+      "address": 68.9,
+      "date": 99.1,
+      "total": 90.8
+     },
+     "recall": {
+      "seller": 65.7,
+      "address": 68.9,
+      "date": 99.1,
+      "total": 90.5
+     },
+     "macro_f1": 81.1,
+     "soft_macro_f1": 86.5,
+     "soft_f1": {
+      "seller": 70.6,
+      "address": 85.6,
+      "date": 99.1,
+      "total": 90.6
+     },
+     "valid_json": 100.0,
+     "latency_ms_median": 23086,
+     "latency_ms_mean": 25782
+    },
+    "qwen2.5-7b": {
+     "n": 347,
+     "f1": {
+      "seller": 71.8,
+      "address": 86.2,
+      "date": 98.6,
+      "total": 97.0
+     },
+     "precision": {
+      "seller": 71.8,
+      "address": 86.2,
+      "date": 98.6,
+      "total": 97.1
+     },
+     "recall": {
+      "seller": 71.8,
+      "address": 86.2,
+      "date": 98.6,
+      "total": 96.8
+     },
+     "macro_f1": 88.4,
+     "soft_macro_f1": 91.1,
+     "soft_f1": {
+      "seller": 75.8,
+      "address": 93.1,
+      "date": 98.6,
+      "total": 97.0
+     },
+     "valid_json": 100.0,
+     "latency_ms_median": 3740,
+     "latency_ms_mean": 3737
+    }
+   }
+  },
+  "mcocr": {
+   "label": "MC-OCR (VI)",
+   "by_method": {
+    "regex": {
+     "n": 200,
+     "f1": {
+      "seller": 41.3,
+      "address": 1.6,
+      "date": 79.3,
+      "total": 72.0
+     },
+     "precision": {
+      "seller": 39.5,
+      "address": 1.5,
+      "date": 79.7,
+      "total": 70.6
+     },
+     "recall": {
+      "seller": 43.2,
+      "address": 1.6,
+      "date": 78.8,
+      "total": 73.5
+     },
+     "macro_f1": 48.5,
+     "soft_macro_f1": 51.5,
+     "soft_f1": {
+      "seller": 48.6,
+      "address": 6.3,
+      "date": 79.3,
+      "total": 72.0
+     },
+     "valid_json": 100.0,
+     "latency_ms_median": 0,
+     "latency_ms_mean": 0
+    },
+    "deepseek-zs": {
+     "n": 200,
+     "f1": {
+      "seller": 65.3,
+      "address": 21.9,
+      "date": 88.3,
+      "total": 84.1
+     },
+     "precision": {
+      "seller": 62.9,
+      "address": 22.0,
+      "date": 87.1,
+      "total": 79.9
+     },
+     "recall": {
+      "seller": 67.8,
+      "address": 21.9,
+      "date": 89.4,
+      "total": 88.8
+     },
+     "macro_f1": 64.9,
+     "soft_macro_f1": 74.4,
+     "soft_f1": {
+      "seller": 72.6,
+      "address": 52.6,
+      "date": 88.3,
+      "total": 84.1
+     },
+     "valid_json": 100.0,
+     "latency_ms_median": 866,
+     "latency_ms_mean": 944
+    },
+    "deepseek-fs": {
+     "n": 200,
+     "f1": {
+      "seller": 72.0,
+      "address": 30.1,
+      "date": 91.4,
+      "total": 84.9
+     },
+     "precision": {
+      "seller": 69.7,
+      "address": 30.1,
+      "date": 90.2,
+      "total": 80.9
+     },
+     "recall": {
+      "seller": 74.3,
+      "address": 30.1,
+      "date": 92.6,
+      "total": 89.4
+     },
+     "macro_f1": 69.6,
+     "soft_macro_f1": 76.6,
+     "soft_f1": {
+      "seller": 76.2,
+      "address": 54.1,
+      "date": 91.4,
+      "total": 84.9
+     },
+     "valid_json": 100.0,
+     "latency_ms_median": 976,
+     "latency_ms_mean": 1026
+    },
+    "qwen2.5-3b": {
+     "n": 200,
+     "f1": {
+      "seller": 44.9,
+      "address": 20.1,
+      "date": 86.8,
+      "total": 73.4
+     },
+     "precision": {
+      "seller": 43.0,
+      "address": 19.4,
+      "date": 84.8,
+      "total": 68.7
+     },
+     "recall": {
+      "seller": 47.0,
+      "address": 20.8,
+      "date": 88.9,
+      "total": 78.8
+     },
+     "macro_f1": 56.3,
+     "soft_macro_f1": 65.4,
+     "soft_f1": {
+      "seller": 53.3,
+      "address": 48.0,
+      "date": 86.8,
+      "total": 73.4
+     },
+     "valid_json": 100.0,
+     "latency_ms_median": 23782,
+     "latency_ms_mean": 79133
+    },
+    "qwen2.5-7b": {
+     "n": 200,
+     "f1": {
+      "seller": 52.7,
+      "address": 21.9,
+      "date": 88.5,
+      "total": 84.1
+     },
+     "precision": {
+      "seller": 50.5,
+      "address": 22.0,
+      "date": 87.2,
+      "total": 79.9
+     },
+     "recall": {
+      "seller": 55.2,
+      "address": 21.9,
+      "date": 89.9,
+      "total": 88.8
+     },
+     "macro_f1": 61.8,
+     "soft_macro_f1": 70.3,
+     "soft_f1": {
+      "seller": 58.0,
+      "address": 50.4,
+      "date": 88.5,
+      "total": 84.1
+     },
+     "valid_json": 100.0,
+     "latency_ms_median": 2708,
+     "latency_ms_mean": 3443
+    }
+   }
+  }
+ },
+ "errors": {
+  "sroie": {
+   "regex": {
+    "seller": {
+     "correct": 222,
+     "wrong": 10,
+     "partial": 111,
+     "near_match": 4
+    },
+    "address": {
+     "near_match": 53,
+     "correct": 196,
+     "wrong": 52,
+     "partial": 46
+    },
+    "date": {
+     "correct": 311,
+     "wrong": 31,
+     "missed": 5
+    },
+    "total": {
+     "correct": 220,
+     "wrong": 112,
+     "missed": 11,
+     "partial": 4
+    }
+   },
+   "deepseek-zs": {
+    "seller": {
+     "correct": 243,
+     "partial": 86,
+     "wrong": 15,
+     "near_match": 3
+    },
+    "address": {
+     "near_match": 19,
+     "correct": 308,
+     "partial": 19,
+     "wrong": 1
+    },
+    "date": {
+     "correct": 344,
+     "wrong": 2,
+     "partial": 1
+    },
+    "total": {
+     "correct": 339,
+     "wrong": 7,
+     "missed": 1
+    }
+   },
+   "deepseek-fs": {
+    "seller": {
+     "correct": 284,
+     "partial": 44,
+     "near_match": 4,
+     "wrong": 15
+    },
+    "address": {
+     "near_match": 22,
+     "correct": 307,
+     "partial": 18
+    },
+    "date": {
+     "correct": 344,
+     "wrong": 2,
+     "partial": 1
+    },
+    "total": {
+     "correct": 342,
+     "wrong": 5
+    }
+   },
+   "qwen2.5-3b": {
+    "seller": {
+     "wrong": 19,
+     "partial": 83,
+     "correct": 228,
+     "near_match": 17
+    },
+    "address": {
+     "wrong": 11,
+     "partial": 39,
+     "correct": 239,
+     "near_match": 58
+    },
+    "date": {
+     "correct": 344,
+     "wrong": 2,
+     "partial": 1
+    },
+    "total": {
+     "correct": 314,
+     "wrong": 32,
+     "missed": 1
+    }
+   },
+   "qwen2.5-7b": {
+    "seller": {
+     "wrong": 21,
+     "partial": 63,
+     "correct": 249,
+     "near_match": 14
+    },
+    "address": {
+     "near_match": 24,
+     "correct": 299,
+     "partial": 20,
+     "wrong": 4
+    },
+    "date": {
+     "correct": 342,
+     "wrong": 4,
+     "partial": 1
+    },
+    "total": {
+     "correct": 336,
+     "wrong": 10,
+     "missed": 1
+    }
+   }
+  },
+  "mcocr": {
+   "regex": {
+    "seller": {
+     "wrong": 82,
+     "correct": 79,
+     "gold_missing": 17,
+     "near_match": 14,
+     "partial": 8
+    },
+    "address": {
+     "wrong": 159,
+     "correct": 3,
+     "gold_missing": 17,
+     "partial": 12,
+     "near_match": 9
+    },
+    "date": {
+     "correct": 149,
+     "both_empty": 5,
+     "missed": 8,
+     "wrong": 31,
+     "partial": 1,
+     "gold_missing": 6
+    },
+    "total": {
+     "wrong": 33,
+     "gold_missing": 16,
+     "correct": 125,
+     "missed": 9,
+     "partial": 3,
+     "both_empty": 14
+    }
+   },
+   "deepseek-zs": {
+    "seller": {
+     "correct": 124,
+     "gold_missing": 15,
+     "wrong": 30,
+     "near_match": 14,
+     "both_empty": 2,
+     "partial": 14,
+     "missed": 1
+    },
+    "address": {
+     "wrong": 83,
+     "correct": 40,
+     "gold_missing": 2,
+     "near_match": 56,
+     "both_empty": 15,
+     "missed": 3,
+     "partial": 1
+    },
+    "date": {
+     "correct": 169,
+     "both_empty": 5,
+     "wrong": 18,
+     "partial": 1,
+     "gold_missing": 6,
+     "missed": 1
+    },
+    "total": {
+     "correct": 151,
+     "gold_missing": 20,
+     "partial": 3,
+     "missed": 1,
+     "wrong": 15,
+     "both_empty": 10
+    }
+   },
+   "deepseek-fs": {
+    "seller": {
+     "correct": 136,
+     "gold_missing": 12,
+     "wrong": 28,
+     "both_empty": 5,
+     "partial": 11,
+     "near_match": 8
+    },
+    "address": {
+     "wrong": 60,
+     "correct": 55,
+     "gold_missing": 3,
+     "near_match": 44,
+     "partial": 21,
+     "both_empty": 14,
+     "missed": 3
+    },
+    "date": {
+     "correct": 175,
+     "both_empty": 5,
+     "wrong": 12,
+     "partial": 1,
+     "gold_missing": 6,
+     "missed": 1
+    },
+    "total": {
+     "correct": 152,
+     "gold_missing": 19,
+     "partial": 3,
+     "missed": 1,
+     "wrong": 14,
+     "both_empty": 11
+    }
+   },
+   "qwen2.5-3b": {
+    "seller": {
+     "correct": 86,
+     "gold_missing": 17,
+     "partial": 48,
+     "near_match": 16,
+     "wrong": 33
+    },
+    "address": {
+     "wrong": 83,
+     "correct": 38,
+     "gold_missing": 13,
+     "near_match": 53,
+     "both_empty": 4,
+     "partial": 9
+    },
+    "date": {
+     "correct": 168,
+     "gold_missing": 10,
+     "wrong": 19,
+     "partial": 1,
+     "missed": 1,
+     "both_empty": 1
+    },
+    "total": {
+     "correct": 134,
+     "gold_missing": 26,
+     "wrong": 31,
+     "partial": 4,
+     "missed": 1,
+     "both_empty": 4
+    }
+   },
+   "qwen2.5-7b": {
+    "seller": {
+     "correct": 101,
+     "gold_missing": 17,
+     "wrong": 32,
+     "near_match": 10,
+     "partial": 40
+    },
+    "address": {
+     "wrong": 83,
+     "correct": 40,
+     "gold_missing": 4,
+     "near_match": 52,
+     "both_empty": 13,
+     "missed": 5,
+     "partial": 3
+    },
+    "date": {
+     "correct": 170,
+     "both_empty": 4,
+     "wrong": 17,
+     "gold_missing": 7,
+     "partial": 1,
+     "missed": 1
+    },
+    "total": {
+     "correct": 151,
+     "gold_missing": 20,
+     "partial": 3,
+     "missed": 1,
+     "wrong": 15,
+     "both_empty": 10
+    }
+   }
+  }
+ },
+ "examples": [
+  {
+   "doc": "sroie/X00016469670",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "NO 2 & 4, JALAN BAYU 4, BANDAR SERI ALAM, B1750 MASAI, JOHOR",
+   "pred": "NO 2 & 4, JALAN BAYU 4, BANDAR SERI ALAM, 81750 MASAI, JOHOR"
+  },
+  {
+   "doc": "sroie/X00016469670",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "OJC MARKETING SDN BHD",
+   "pred": "TAN CHAY YEE"
+  },
+  {
+   "doc": "sroie/X00016469670",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "NO 2 & 4, JALAN BAYU 4, BANDAR SERI ALAM, B1750 MASAI, JOHOR",
+   "pred": "NO 2 & 4, JALAN BAYU 4, BANDAR SERI ALAM, 81750 MASAI, JOHOR"
+  },
+  {
+   "doc": "sroie/X00016469671",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "OJC MARKETING SDN BHD",
+   "pred": "TAN CHAY YEE\nOJC MARKETING SDN BHD"
+  },
+  {
+   "doc": "sroie/X51005230605",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "PETRON BKT LANJAN SB",
+   "pred": "PETRON BKT LANJAN SB ALSERKAM ENTERPRISE"
+  },
+  {
+   "doc": "sroie/X51005230605",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "PETRON BKT LANJAN SB",
+   "pred": "PETRON BKT LANJAN SB\nALSERKAM ENTERPRISE"
+  },
+  {
+   "doc": "sroie/X51005230605",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "KM 458.4 BKT LANJAN UTARA, L/RAYA UTARA SELATAN,SG BULOH 47000 SUNGAI BUL",
+   "pred": "KM 458.4 BKT LANJAN UTARA, L/RAYA UTARA SELATAN, SG BULOH 47000 SUNGAI BULOH"
+  },
+  {
+   "doc": "sroie/X51005230616",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LEVEL 6, BANGUNAN TH, DAMANSARA UPTOWN3 NO.3, JALAN SS21/39,47400 PETALING JAYA SELANGOR",
+   "pred": "LEVEL 6, BANGUNAN TH, DAMANSARA UPTOWN3 NO.3, JALAN SS21/39,47400 PETALING JAYA SЕLANGOR"
+  },
+  {
+   "doc": "sroie/X51005268408",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1413-SETIA ALAM 2",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51005268408",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1413-SETIA ALAM 2",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51005288570",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "SECURE PARKING CORPORATION S/B",
+   "pred": "SECURE PARKING CORPORATION"
+  },
+  {
+   "doc": "sroie/X51005337867",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "OLD TOWN KOPITAM SND BHD",
+   "pred": "OLD TOWN KOPITIAM SDN BHD"
+  },
+  {
+   "doc": "sroie/X51005337867",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "OLD TOWN KOPITAM SND BHD",
+   "pred": "OLDTOWN WHITE COFFEE"
+  },
+  {
+   "doc": "sroie/X51005361906",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "TED HENG STATIONERY & BOOKS",
+   "pred": "TEO HENG STATIONERY & BOOKS"
+  },
+  {
+   "doc": "sroie/X51005361906",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "TED HENG STATIONERY & BOOKS",
+   "pred": "TEO HENG STATIONERY & BOOKS"
+  },
+  {
+   "doc": "sroie/X51005433548",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "379, JALAN PERMAS SATU, BANDAR BARU PERMAS JAYA 81750 PLENTONG, JOHOR.",
+   "pred": "379, JALAN PERMAS SATU, BANDAR BARU PERMAS JAYA B1750 PLENTONG, JOHOR."
+  },
+  {
+   "doc": "sroie/X51005433548",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "379, JALAN PERMAS SATU, BANDAR BARU PERMAS JAYA 81750 PLENTONG, JOHOR.",
+   "pred": "379, JALAN PERMAS SATU, BANDAR BARU PERMAS JAYA B1750 PLENTONG, JOHOR"
+  },
+  {
+   "doc": "sroie/X51005442322",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "GRAND COMPANIONS SDN BHD",
+   "pred": "TONY ROMA'S AEON TEBRAU CITY"
+  },
+  {
+   "doc": "sroie/X51005442322",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "03 MAR 19",
+   "pred": "03 MAR 18 05:16:55 PM"
+  },
+  {
+   "doc": "sroie/X51005442322",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "GRAND COMPANIONS SDN BHD",
+   "pred": "TONY ROMA'S AEON TEBRAU CITY"
+  },
+  {
+   "doc": "sroie/X51005442322",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT G112, AEON MALL TEBRAU CITY NO 1 JALAN DESA TEBRAU 81100 JOHOR BAHRU",
+   "pred": "GRAND COMPANIONS SDN BHD(285560-H) LOT G112, AEON MALL TEBRAU CITY NO 1 JALAN DESA TEBRAU 81100 JOHOR BAHRU"
+  },
+  {
+   "doc": "sroie/X51005442322",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "03 MAR 19",
+   "pred": "03 MAR 18 05:16:55 PM"
+  },
+  {
+   "doc": "sroie/X51005442334",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "12, JALAN TAMPOI 7/4,KAWASAN PARINDUSTRIAN TAMPOI,81200 JOHOR BAHRU,JOHOR",
+   "pred": "12,JALAN TAMPOI 7/4,KAWASAN PERINDUSTRIAN TAMPOI,81200 JOHOR BAHRU,JOHOR"
+  },
+  {
+   "doc": "sroie/X51005442334",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "12, JALAN TAMPOI 7/4,KAWASAN PARINDUSTRIAN TAMPOI,81200 JOHOR BAHRU,JOHOR",
+   "pred": "12, JALAN TAMPOI 7/4, KAWASAN PERINDUSTRIAN TAMPOI, 81200 JOHOR BAHRU, JOHOR"
+  },
+  {
+   "doc": "sroie/X51005442366",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "NO 14& 16 JALAN PERMAS 4/3 BANDAR BARU PERMAS JAY",
+   "pred": "NO 14& 16 JALAN PERMAS 4/3 BANDAR BARU PERMAS JAYA"
+  },
+  {
+   "doc": "sroie/X51005442366",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "NO 14& 16 JALAN PERMAS 4/3 BANDAR BARU PERMAS JAY",
+   "pred": "NO 14& 16 JALAN PERMAS 4/3 BANDAR BARU PERMAS JAYA"
+  },
+  {
+   "doc": "sroie/X51005442382",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "12, JALAN TAMPOI 7/4,KAWASAN PERINDUSTRIAN TAMPOI,81200 JOHOR BAHRU,JOHOR",
+   "pred": "12, JALAN TAMPOI 7/4, KAWASAN PERINDUSTRLAN TAMPOL, 81200 JOHOR BAHRU, JOHOR"
+  },
+  {
+   "doc": "sroie/X51005442382",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "12, JALAN TAMPOI 7/4,KAWASAN PERINDUSTRIAN TAMPOI,81200 JOHOR BAHRU,JOHOR",
+   "pred": "12, JALAN TAMPOI 7/4, KAWASAN PERINDUSTRLAN TAMPOL, 81200 JOHOR BAHRU, JOHOR"
+  },
+  {
+   "doc": "sroie/X51005444040",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "BENS INDEPENDENT GROCER SDN. BHD",
+   "pred": "B.I.G. BEN'S INDEPENDENT GROCER"
+  },
+  {
+   "doc": "sroie/X51005444041",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "BENS INDEPENDENT GROCER SDN. BHD",
+   "pred": "B.I.G. BEN'S INDEPENDENT GROCER"
+  },
+  {
+   "doc": "sroie/X51005444044",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "99 SPEED MART S/B",
+   "pred": "99 SPEED MART S/B (519537-X)"
+  },
+  {
+   "doc": "sroie/X51005444044",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1572-TMN BKT PANDAN",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51005444046",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "STAR GROCER SDN BHD",
+   "pred": "STAR GROCER SDN BHD (1171881-W)"
+  },
+  {
+   "doc": "sroie/X51005447844",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "RESTAURANT JIAWEI JIAWEI HOUSE",
+   "pred": "RESTAURANT JIAWEI"
+  },
+  {
+   "doc": "sroie/X51005447844",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "13, JLN TASIK UTAMA 8 MEDAN NIAGA DAMAI SG BESI",
+   "pred": "13, JLN TASIK UTAMA 8 MEDAN NIAGA DAMAI SG BESI 57000 KL"
+  },
+  {
+   "doc": "sroie/X51005447844",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "RESTAURANT JIAWEI JIAWEI HOUSE",
+   "pred": "RESTAURANT JIAWEI"
+  },
+  {
+   "doc": "sroie/X51005447844",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "13, JLN TASIK UTAMA 8 MEDAN NIAGA DAMAI SG BESI",
+   "pred": "JIAWEI HOUSE 13, JLN TASIK UTAMA 8 MEDAN NIAGA DAMAI SG BESI 57000 KL"
+  },
+  {
+   "doc": "sroie/X51005568887",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "26/04/2017",
+   "pred": "06/04/2017 11:01:36 AM"
+  },
+  {
+   "doc": "sroie/X51005568887",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "26/04/2017",
+   "pred": "06/04/2017 11:01:36 AM"
+  },
+  {
+   "doc": "sroie/X51005568894",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VIVOPAC MARKETING SDN BHD",
+   "pred": "VIVOPAC MARKETING SDN BHD (1070687-M)"
+  },
+  {
+   "doc": "sroie/X51005568895",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VIVOPAC MARKETING SDN BHD",
+   "pred": "VIVOPAC MARKETING SDN BHD (1070687-M)"
+  },
+  {
+   "doc": "sroie/X51005568895",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VIVOPAC MARKETING SDN BHD",
+   "pred": "VIVOPAC MARKETING SDN BHD (1070687-M)"
+  },
+  {
+   "doc": "sroie/X51005605287",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "AEON CO. (M) BHD",
+   "pred": "AEON CO. (M) BHD (126926-H)"
+  },
+  {
+   "doc": "sroie/X51005605295",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT GO1, KL FESTIVAL CITY, NO. 67 JIN IBU KOTA TMN DANAU KOTA, KL",
+   "pred": "LOT G01, KL FESTIVAL CITY, NO. 67 JIN JBU KOTA IMN DANAW KOTA, KL"
+  },
+  {
+   "doc": "sroie/X51005605295",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT GO1, KL FESTIVAL CITY, NO. 67 JIN IBU KOTA TMN DANAU KOTA, KL",
+   "pred": "LOT G01, KL FESTIVAL CITY, NO. 67 JIN JBU KOTA IMN DANAW KOTA, KL"
+  },
+  {
+   "doc": "sroie/X51005663300",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "NO 7, SIMPANG OFF BATU VILLAGE, JALAN IPOH BATU 5, 51200 KUALA LUMPUR MALAYSIA",
+   "pred": "NO 7. SIMPANG OFF BATU VILLAGE, JALAN IPOH BATU 5, 51200 KUATA LUMPUR MALAYSIA"
+  },
+  {
+   "doc": "sroie/X51005663300",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "NO 7, SIMPANG OFF BATU VILLAGE, JALAN IPOH BATU 5, 51200 KUALA LUMPUR MALAYSIA",
+   "pred": "NO 7. SIMPANG OFF BATU VILLAGE, JALAN IPOH BATU 5, 51200 KUATA LUMPUR MALAYSIA"
+  },
+  {
+   "doc": "sroie/X51005663307",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "LA STATIONERY SDN BHD",
+   "pred": "LA STATIONERY SDN BHD (640899-P)"
+  },
+  {
+   "doc": "sroie/X51005663307",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "LA STATIONERY SDN BHD",
+   "pred": "LA STATIONERY SDN BHD (640899-P)"
+  },
+  {
+   "doc": "sroie/X51005675099",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "NO. 18 & 19, TAMAN CITY, JALAN KUCHING, 52100 KUALA LUMPUR",
+   "pred": "18 & 19, Taman City, Jalan Kuching, 52100 Kuala Lumpur"
+  },
+  {
+   "doc": "sroie/X51005675914",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT 1-0-2, JLN 1/50, DIAMOND SQUARE, OFF JLN GOMBAK 53000 KUALA LUMPUR",
+   "pred": "LOT 1-0-2, JLN 1/50, DIAMOND SQUARE, OFF JLN GOMBAK 53000 KUALA LUMPER"
+  },
+  {
+   "doc": "sroie/X51005675914",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT 1-0-2, JLN 1/50, DIAMOND SQUARE, OFF JLN GOMBAK 53000 KUALA LUMPUR",
+   "pred": "LOT 1-0-2, JLN 1/50, DIAMOND SQUARE, OFF JLN GOMBAK 53000 KUALA LUMPER"
+  },
+  {
+   "doc": "sroie/X510056849111",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "RM7.42",
+   "pred": "7.40"
+  },
+  {
+   "doc": "sroie/X51005684949",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "7.42",
+   "pred": "7.40"
+  },
+  {
+   "doc": "sroie/X51005715455",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "99 SPEED MART S/B",
+   "pred": "99 SPEED MAPT S/B (519537-X)"
+  },
+  {
+   "doc": "sroie/X51005715455",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1330 JLN KENANGA",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51005715455",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "99 SPEED MART S/B",
+   "pred": "SPEED MAPT S/B"
+  },
+  {
+   "doc": "sroie/X51005715455",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1330 JLN KENANGA",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY, 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51005719855",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "CPI ROCKU SDN. BHD.",
+   "pred": "ROCKU YAKINIKU"
+  },
+  {
+   "doc": "sroie/X51005719855",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "CPI ROCKU SDN. BHD.",
+   "pred": "ROCKU YAKINIKU"
+  },
+  {
+   "doc": "sroie/X51005719857",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "ALI BABA INTERNATIONAL SDN BHD",
+   "pred": "SALON DU CHOCOLAT"
+  },
+  {
+   "doc": "sroie/X51005719857",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "ALI BABA INTERNATIONAL SDN BHD",
+   "pred": "SALON DU CHOCOLAT"
+  },
+  {
+   "doc": "sroie/X51005719857",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "PUBLIKA SHOPPING GALLERY LOT 26-27 ,LEVEL G2,JLN DUTAMAS 1, SOLARIS DUTAMAS,50480 KL.",
+   "pred": "ALI BABA INTERNATIONAL SDN BHD (955950-H) PUBLIKA SHOPPING GALLERY LOT 26-27, LEVEL G2, JLN DUTAMAS 1, SOLARIS DUTAMAS,50480 KL."
+  },
+  {
+   "doc": "sroie/X51005719888",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "39.80",
+   "pred": "37.54"
+  },
+  {
+   "doc": "sroie/X51005724552",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "KEDAI PAPAN YEW CHUAN",
+   "pred": "R KEDAI PAPAN YEW CHUAN"
+  },
+  {
+   "doc": "sroie/X51005724611",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "KEDAI PAPAN YEW CHUAN",
+   "pred": "R KEDAI PAPAN YEW CHUAN"
+  },
+  {
+   "doc": "sroie/X51005724622",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "KEDAI PAPAN YEW CHUAN",
+   "pred": "R KEDAI PAPAN YEW CHUAN"
+  },
+  {
+   "doc": "sroie/X51005724623",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "KEDA PAPAN YEW CHJAN",
+   "pred": "KEDA PAPAN YEW CHUAN"
+  },
+  {
+   "doc": "sroie/X51005724623",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT 276 JALAN BANTING 800 DEN SELANGOR.",
+   "pred": "LOT 276 JALAN BANTING 43800 DEN SELANGOR."
+  },
+  {
+   "doc": "sroie/X51005724623",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "KEDA PAPAN YEW CHJAN",
+   "pred": "R KEDA PAPAN YEW CHUAN"
+  },
+  {
+   "doc": "sroie/X51005724623",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT 276 JALAN BANTING 800 DEN SELANGOR.",
+   "pred": "LOT 276 JALAN BANTING 43800 DEN SELANGOR"
+  },
+  {
+   "doc": "sroie/X51005724624",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "KEDAI PAPAN YEW CHUAN",
+   "pred": "R KEDAI PAPAN YEW CHUAN"
+  },
+  {
+   "doc": "sroie/X51005724625",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "KEDAI PAPAN YEW CHUAN",
+   "pred": "R KEDAI PAPAN YEW CHUAN"
+  },
+  {
+   "doc": "sroie/X51005724626",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "KEDAI PAPAN YEW CHUAN",
+   "pred": "R KEDAI PAPAN YEW CHUAN"
+  },
+  {
+   "doc": "sroie/X51005724628",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "KEDAI PAPAN YEW CHUAN",
+   "pred": "R KEDAI PAPAN YEW CHUAN"
+  },
+  {
+   "doc": "sroie/X51005741929",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "NO 13, 15, 17 & 19 JALAN NOVA Q U5/Q, SEKSYEN U5, SUBANG BESTARI 40150 SHAH ALA SELANGOR DARUL EHSAN",
+   "pred": "NO 13, 15, 17 & 19 JALAN NOVA Q U5/Q, SEKSYEN U5, SUBANG BESTARI 40150 SHAH ALAM SELANGOR DARUL EHSAN"
+  },
+  {
+   "doc": "sroie/X51005745244",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "URBAN IDEA SDN BHD",
+   "pred": "SUBWAY#42210-0"
+  },
+  {
+   "doc": "sroie/X51005745244",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "URBAN IDEA SDN BHD",
+   "pred": "SUBWAY#42210-0"
+  },
+  {
+   "doc": "sroie/X51005745244",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "A-G-06, DATARAN GLOMAC, JALAN SS6/5A, PUSAT BANDAR KELANA JAYA, 47301 PETALING JAYA, SELANGOR, MALAYSIA",
+   "pred": "URBAN IDEA SDN BHD (417940-M), A-G-06, DATARAN GLOMAC, JALAN SS6/5A, PUSAT BANDAR KELANA JAYA, 47301 PETALING JAYA, SELANGOR, MALAYSIA"
+  },
+  {
+   "doc": "sroie/X51005745298",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "99 SPEED MART S/B",
+   "pred": "99 SPEED MART S/B (519537-X)"
+  },
+  {
+   "doc": "sroie/X51005745298",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1317-TRILLIUM SG BESI",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51005745298",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1317-TRILLIUM SG BESI",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51005746203",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "NO. 1 JALAN EURO 1 OFF JALAN BATU TIGA SUNGAI BULOH SEKSYEN U3 SHAH ALAM, 40150",
+   "pred": "PASARAYA BORONG SUPER SEVEN NO. 1 JALAN EURO 1 OFF JALAN BATU TIGA SUNGAI BULOH SEKSYEN U3 SHAH ALAM, 40150"
+  },
+  {
+   "doc": "sroie/X51005746203",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "NO. 1 JALAN EURO 1 OFF JALAN BATU TIGA SUNGAI BULOH SEKSYEN U3 SHAH ALAM, 40150",
+   "pred": "PASARAYA BORONG SUPER SEVEN NO. 1 JALAN EURO 1 OFF JALAN BATU TIGA SUNGAI BULOH SEKSYEN U3 SHAH ALAM, 40150"
+  },
+  {
+   "doc": "sroie/X51005746206",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "NO. 10-G, GROUND FLOOR. JALAN DINAR D, U3/D. TAMAN SUBANG PEADANA. SEK U3. 40150 SHAH ALAM, SELANGOR.",
+   "pred": "NO. 10-G. GROUND FLOOR . JALAN DINAR D. U3/D. TAMAN SUBANG PERDANA. SEK U3. 40150 SHAH ALAM, SELANGOR."
+  },
+  {
+   "doc": "sroie/X51005746206",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "NO. 10-G, GROUND FLOOR. JALAN DINAR D, U3/D. TAMAN SUBANG PEADANA. SEK U3. 40150 SHAH ALAM, SELANGOR.",
+   "pred": "NO. 10-G. GROUND FLOOR . JALAN DINAR D. U3/D. TAMAN SUBANG PERDANA. SEK U3. 40150 SHAH ALAM, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51005746207",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "NO. 1 JALAN EURO 1 OFF JALAN BATU TIGA SUNGAI BULOH SEKSYEN U3 SHAH ALAM, 40150",
+   "pred": "PASARAYA BORONG SUPER SEVEN NO. 1 JALAN EURO 1 OFF JALAN BATU TIGA SUNGAI BULOH SEKSYEN U3 SHAH ALAM, 40150"
+  },
+  {
+   "doc": "sroie/X51005746210",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "SEGI CASH & CARRY SDN. BHD.",
+   "pred": "SEGI CASH & CARRY SDN. BHD. (317041-W)"
+  },
+  {
+   "doc": "sroie/X51005749904",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "28-G, GROUND FLOOR, JALAN DINAR A U3/A, TMN SUBANG PERDANA, 40150 SHAN ALAM, SELANGOR.",
+   "pred": "28-G, GROUND FLOOR, JALAN DINAR A U3/A, TMN SUBANG PERDANA, 40150 SHAH ALAM, SELANGOR."
+  },
+  {
+   "doc": "sroie/X51005749904",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "28-G, GROUND FLOOR, JALAN DINAR A U3/A, TMN SUBANG PERDANA, 40150 SHAN ALAM, SELANGOR.",
+   "pred": "28-G, GROUND FLOOR, JALAN DINAR A U3/A, TMN SUBANG PERDANA, 40150 SHAH ALAM, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51005757233",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "G31 & G32, GRD FLR, IOI MALL BANDAR PUCHONG JAYA",
+   "pred": "G31 & G32, GRD FLR, IOI MALL BAMDAR PUCHONG JAYA"
+  },
+  {
+   "doc": "sroie/X51005757233",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "G31 & G32, GRD FLR, IOI MALL BANDAR PUCHONG JAYA",
+   "pred": "IOI MALL G31 & G32, GRD FLR, IOI MALL BAMDAR PUCHONG JAYA"
+  },
+  {
+   "doc": "sroie/X51005763958",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "NO. 1 JALAN EURO 1 OFF JALAN BATU TIGA SUNGAI BULOH SEKSYEN U3 SHAH ALAM, 40150",
+   "pred": "PASARAYA BORONG SUPER SEVEN NO. 1 JALAN EURO 1 OFF JALAN BATU TIGA SUNGAI BULOH SEKSYEN U3 SHAH ALAM, 40150"
+  },
+  {
+   "doc": "sroie/X51005763999",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "SEGI CASH & CARRY SDN. BHD.",
+   "pred": "SEGI CASH & CARRY SDN. BHD.(317041-W)"
+  },
+  {
+   "doc": "sroie/X51005764031",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "NO. 1 JALAN EURO 1 OFF JALAN BATU TIGA SUNGAI BULOH SEKSYEN U3 SHAH ALAM, 40150",
+   "pred": "FASARAYA BORONG SUPER SEVEN NO. 1 JALAN EURO 1 OFF JALAN BATU TIGA SUNGAI BULOH SEKSYEN U3 SHAH ALAM, 40150"
+  },
+  {
+   "doc": "sroie/X51005764031",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "NO. 1 JALAN EURO 1 OFF JALAN BATU TIGA SUNGAI BULOH SEKSYEN U3 SHAH ALAM, 40150",
+   "pred": "FASARAYA BORONG SUPER SEVEN NO. 1 JALAN EURO 1 OFF JALAN BATU TIGA SUNGAI BULOH SEKSYEN U3 SHAH ALAM, 40150"
+  },
+  {
+   "doc": "sroie/X51005764161",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "99 SPEED MART S/B",
+   "pred": "99 SPEED MART S/B (519537-X)"
+  },
+  {
+   "doc": "sroie/X51005764161",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1313-SUBANG BESTARI",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51005806695",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "SAYANG YOU STATION SDN BHD",
+   "pred": "JUWITA WEDDINGS"
+  },
+  {
+   "doc": "sroie/X51005806695",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "SAYANG YOU STATION SDN BHD",
+   "pred": "JUWITA WEDDINGS (366310-U)"
+  },
+  {
+   "doc": "sroie/X51005806696",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "7.20",
+   "pred": "7.65"
+  },
+  {
+   "doc": "sroie/X51005806696",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "7.20",
+   "pred": "7.65"
+  },
+  {
+   "doc": "sroie/X51006008166",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "FLORISM DE ART",
+   "pred": "FLORISM DE ART (940075-X)"
+  },
+  {
+   "doc": "sroie/X51006008166",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "FLORISM DE ART",
+   "pred": "FLORISM DE ART (940075-X)"
+  },
+  {
+   "doc": "sroie/X51006008206",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "DEWINA HOST SDN BHD",
+   "pred": "BURGER KING"
+  },
+  {
+   "doc": "sroie/X51006008206",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "DEWINA HOST SDN BHD",
+   "pred": "BURGER KING"
+  },
+  {
+   "doc": "sroie/X51006008206",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT SATMZ 23, MEZZANINE LEVEL SATELLITE BUILDING KUALA LUMPUR INTERNATIONAL AIRPORT",
+   "pred": "LOT SATMZ 23, MEZZANINE LEVEL SATELLITE BUILDING KUALA LUMPUR INTERNATIONAL AIRPORT DEWINA HOST SDN BHD (434286-P)"
+  },
+  {
+   "doc": "sroie/X51006311714",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "SOLARIS MOUNT KIARA NO.8 & 10, GF SOLARIS MOUNT KUARA JLN SOLARIS 5",
+   "pred": "NO.8 & 10, GF SOLARIS MOUNT KUARA JLN SOLARIS 5"
+  },
+  {
+   "doc": "sroie/X51006327960",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "KING'S CONFECTIONERY S/B",
+   "pred": "KING'S CONFECTIONERY S/B 273500-U (GKJ)"
+  },
+  {
+   "doc": "sroie/X51006328345",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "KING'S CONFECTIONERY S/B",
+   "pred": "KING'S CONFECTIONERY S/B 273500-U (KJ1)"
+  },
+  {
+   "doc": "sroie/X51006334742",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "LOT L1-4 STAR AVENUE MALL JALAN ZUHAL U5/179 SEKSYEN U5 PUSAT KOMERSIAL ARENA BINTANG 40150 SHAH ALAM, SELANGOR",
+   "pred": "LOT L1-4 STAR AVENUE MALL PUSAT KOMERSIAL ARENA BINTANG JALAN ZUHAL U5/179 SEKSYEN U5 40150 SHAH ALAM, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006334927",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "BIRU PETROLEUM",
+   "pred": "CALTEX BIRU PETROLEUM"
+  },
+  {
+   "doc": "sroie/X51006349085",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "PLATINUM RACKING SDN BHD",
+   "pred": "PLATINUM RACKING SDN BHD (PLAT MART)"
+  },
+  {
+   "doc": "sroie/X51006349085",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "PLATINUM RACKING SDN BHD",
+   "pred": "PLATINUM RACKING SDN BHD (PLAT MART)"
+  },
+  {
+   "doc": "sroie/X51006387931",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "AMANO MALAYSIA SDN BHD",
+   "pred": "AMANO MALAYSIA SDN BHD (682288-V)"
+  },
+  {
+   "doc": "sroie/X51006387950",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "AMANO MALAYSIA SDN BHD",
+   "pred": "AMANO MALAYSIA SDN BHD (682288-V)"
+  },
+  {
+   "doc": "sroie/X51006387950",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "AMANO MALAYSIA SDN BHD",
+   "pred": "AMANO MALAYSIA SDN BHD (682288-V)"
+  },
+  {
+   "doc": "sroie/X51006388081",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "KING'S CONFECTIONERY S/B",
+   "pred": "KING'S CONFECTIONERY S/B 273500-U (KJ1)"
+  },
+  {
+   "doc": "sroie/X51006388081",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "NO. 20-A1, JALAN SS6/3, KELANA JAYA, 47301 PETALING JAYA SELANGOR D.E.",
+   "pred": "20-A1, JALAN SS6/3, KELANA JAYA, 47301 PETALING JAYA, SELANGOR D.E."
+  },
+  {
+   "doc": "sroie/X51006389894",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "KING'S CONFECTIONERY S/B",
+   "pred": "KING'S CONFECTIONERY S/B 273500-U (JJ)"
+  },
+  {
+   "doc": "sroie/X51006392167",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "ANEKA INTERTRADE MARKETING SDN BHD",
+   "pred": "ANEKA INTERTRADE MARKETING SDN BHD (524463-X)"
+  },
+  {
+   "doc": "sroie/X51006401853",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "99 SPEED MART S/B",
+   "pred": "99 SPEED MART S/B (519537-X)"
+  },
+  {
+   "doc": "sroie/X51006401853",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1299-SUBANG PERMAI",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006401853",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1299-SUBANG PERMAI",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006414512",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT PTD 101051 JALAN PERMAS 10/10 81750 MASAI, JOHOR",
+   "pred": "LOT PTD 101051 JALAN PERMAS 10/10 8175 MASAI, JOHOR"
+  },
+  {
+   "doc": "sroie/X51006414512",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "BHPETROL PERMAS JAYA 2",
+   "pred": "BHPETROL PERMAS JAYA"
+  },
+  {
+   "doc": "sroie/X51006414512",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT PTD 101051 JALAN PERMAS 10/10 81750 MASAI, JOHOR",
+   "pred": "LOT PTD 101051 JALAN PERMAS 10/10 8175 MASAI, JOHOR"
+  },
+  {
+   "doc": "sroie/X51006414532",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "FREEDOM OPTIMUM SDN BHD",
+   "pred": "THE GEOVENTURE (FREEDOM OPTIMUM SDN BHD)"
+  },
+  {
+   "doc": "sroie/X51006414532",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "FREEDOM OPTIMUM SDN BHD",
+   "pred": "THE GEOVENTURE"
+  },
+  {
+   "doc": "sroie/X51006414532",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "98.00",
+   "pred": "100.00"
+  },
+  {
+   "doc": "sroie/X51006414600",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "AEON CO. (M) SDN BHD",
+   "pred": "AEON CO. (M) BHD"
+  },
+  {
+   "doc": "sroie/X51006414600",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "AEON CO. (M) SDN BHD",
+   "pred": "AEON CO. (M) BHD (126926-H)"
+  },
+  {
+   "doc": "sroie/X51006414702",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "TRIPLE SIX POINT ENTERPRISE 666",
+   "pred": "TRIPLE SIX POINT ENTERPRISE"
+  },
+  {
+   "doc": "sroie/X51006414715",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "partial",
+   "gold": "4/22/2018",
+   "pred": "4/22/2018 08:10PM"
+  },
+  {
+   "doc": "sroie/X51006414715",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "partial",
+   "gold": "4/22/2018",
+   "pred": "4/22/2018 08:10PM"
+  },
+  {
+   "doc": "sroie/X51006414715",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "RM41.81",
+   "pred": "42.00"
+  },
+  {
+   "doc": "sroie/X51006414728",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "FOODELICO SDN. BHD.",
+   "pred": "FOODELICO SDN. BHD. (1268140-H)"
+  },
+  {
+   "doc": "sroie/X51006466070",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "RM42.88",
+   "pred": "RM42.90"
+  },
+  {
+   "doc": "sroie/X51006502534",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "MAXINCOME RESOURCES SDN BHD",
+   "pred": "FAMILYMART"
+  },
+  {
+   "doc": "sroie/X51006502534",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "MAXINCOME RESOURCES SDN BHD",
+   "pred": "FAMILYMART"
+  },
+  {
+   "doc": "sroie/X51006554841",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "NSK TRADE CITY-SELAYANG",
+   "pred": "NSK TRADE CITY-SELAYANG (626470-P)"
+  },
+  {
+   "doc": "sroie/X51006554841",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT 4674 & 4675 SELAYANG BATU 8 JALAN IPOH 68100 BATU CAVES",
+   "pred": "WISMA YAP TIEH (TAG) LOT 4674 & 4675 SELAYANG BATU 8 JALAN IPOH 68100 BATU CAVES"
+  },
+  {
+   "doc": "sroie/X51006554841",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "NSK TRADE CITY-SELAYANG",
+   "pred": "NSK TRADE CITY-SELAYANG (626470-P)"
+  },
+  {
+   "doc": "sroie/X51006554841",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT 4674 & 4675 SELAYANG BATU 8 JALAN IPOH 68100 BATU CAVES",
+   "pred": "WISMA YAP TIEH (TAG) LOT 4674 & 4675 SELAYANG BATU 8 JALAN IPOH 68100 BATU CAVES"
+  },
+  {
+   "doc": "sroie/X51006555819",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006555819",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006555833",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006555835",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006555835",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556648",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556648",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556654",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556654",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556657",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556657",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556658",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556723",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556723",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556728",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556728",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556734",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556734",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556740",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556740",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556806",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556808",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556808",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556809",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556810",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556812",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556812",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556821",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556821",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556826",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556826",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556827",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556827",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556829",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556829",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556851",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556851",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556865",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006556865",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557115",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557115",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557169",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557173",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557173",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557187",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557187",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557194",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557194",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557196",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557196",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557208",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557209",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006557507",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GARDENIA BAKERIES (KL) SDN BHD",
+   "pred": "GARDENIA BAKERIES (KL) SDN BHD (139386 X)"
+  },
+  {
+   "doc": "sroie/X51006619338",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "99 SPEED MART S/B",
+   "pred": "99 SPEED MART S/B (519537-X)"
+  },
+  {
+   "doc": "sroie/X51006619338",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR 1320-TMN BATU",
+   "pred": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006619338",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR 1320-TMN BATU",
+   "pred": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006619507",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "NO.3, JALAN SS21/39,47400 PETALING JAYA SELANGOR",
+   "pred": "LEVEL 6, BANGUNAN TH, DAMANSARA UPTOWN3 NO.3, JALAN SS21/39,47400 PETALING JAYA SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006619507",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "NO.3, JALAN SS21/39,47400 PETALING JAYA SELANGOR",
+   "pred": "LEVEL 6, BANGUNAN TH, DAMANSARA UPTOWN3 NO.3, JALAN SS21/39,47400 PETALING JAYA SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006619509",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "RM15.80",
+   "pred": "14.91"
+  },
+  {
+   "doc": "sroie/X51006619564",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "99 SPEED MART S/B",
+   "pred": "99 SPEED MART S/B (519537-X)"
+  },
+  {
+   "doc": "sroie/X51006619564",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1605-TMN SRI BINTANG",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006619564",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1605-TMN SRI BINTANG",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006619757",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "99 SPEED MART S/B",
+   "pred": "99 SPEED MART S/B (519537-X)"
+  },
+  {
+   "doc": "sroie/X51006619757",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR 1605-TMN SRI BINTANG",
+   "pred": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006619757",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR 1605-TMN SRI BINTANG",
+   "pred": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006619784",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT TC007 & 008, 3RD FLOOR, SG. WANG PLAZA",
+   "pred": "LOT TC007 & 008, 3ND FLOOR, SG. WANG PLAZA"
+  },
+  {
+   "doc": "sroie/X51006619784",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "SECURITY & OA TRADING",
+   "pred": "BIZ LINK SECURITY & OA TRADING (002382060-M)"
+  },
+  {
+   "doc": "sroie/X51006619784",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT TC007 & 008, 3RD FLOOR, SG. WANG PLAZA",
+   "pred": "LOT TC007 & 008, 3ND FLOOR, SG. WANG PLAZA"
+  },
+  {
+   "doc": "sroie/X51006619863",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "99 SPEED MART S/B",
+   "pred": "99 SPEED MART S/B (519537-X)"
+  },
+  {
+   "doc": "sroie/X51006619863",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR 1181-TMN SRI SINAR",
+   "pred": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006619863",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR 1181-TMN SRI SINAR",
+   "pred": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006619869",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "MONSIEUR ( M ) SDN. BHD.",
+   "pred": "HOME'S HARMONY @ 1 UTAMA SHOPPING CENTRE"
+  },
+  {
+   "doc": "sroie/X51006620182",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "PACIFIC ASIAN FOOD DELIGHTS S/B",
+   "pred": "WIN SOON CAFE"
+  },
+  {
+   "doc": "sroie/X51006620182",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "PACIFIC ASIAN FOOD DELIGHTS S/B",
+   "pred": "WIN SOON CAFE"
+  },
+  {
+   "doc": "sroie/X51006620182",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "78.50",
+   "pred": "100.00"
+  },
+  {
+   "doc": "sroie/X51006620192",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "MONSIEUR ( M ) SDN. BHD.",
+   "pred": "HOME'S HARMONY @ 1 UTAMA SHOPPING CENTRE"
+  },
+  {
+   "doc": "sroie/X51006620192",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "MONSIEUR ( M ) SDN. BHD.",
+   "pred": "HOME'S HARMONY @ 1 UTAMA SHOPPING CENTRE"
+  },
+  {
+   "doc": "sroie/X51006620437",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "99 SPEED MART S/B",
+   "pred": "99 SPEED MART S/B (519537-X)"
+  },
+  {
+   "doc": "sroie/X51006620437",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR 1558-TMN PUSAT KEPONG",
+   "pred": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006647984",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "KECHARA VEGETARIAN RESTAURANT S/B",
+   "pred": "KECHARA OASIS"
+  },
+  {
+   "doc": "sroie/X51006647984",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "NO. 72A, JALAN UNIVERSITI, 46200, PETALING JAYA, SELANGOR.",
+   "pred": "63&67-P1, BLOCK D, THE SUITE, JAYA ONE, NO. 72A, JALAN UNIVERSITI, 46200,PETALING JAYA,SELANGOR."
+  },
+  {
+   "doc": "sroie/X51006647984",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "NO. 72A, JALAN UNIVERSITI, 46200, PETALING JAYA, SELANGOR.",
+   "pred": "63&67-P1, BLOCK D, THE SUITE, JAYA ONE, NO. 72A, JALAN UNIVERSITI, 46200, PETALING JAYA, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006733495",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "99 SPEED MART S/B",
+   "pred": "99 SPEED MART S/B (519537-X)"
+  },
+  {
+   "doc": "sroie/X51006733495",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR 1558-TMN PUSAT KEPONG",
+   "pred": "LOT P.T. 33198, BATU 4 JALAN KAPAR, MUKIM KAPAR 42100 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006733495",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "missed",
+   "gold": "14.20",
+   "pred": null
+  },
+  {
+   "doc": "sroie/X51006828199",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "RM36.96",
+   "pred": "RM36.95"
+  },
+  {
+   "doc": "sroie/X51006857132",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "AEON CO. (M) BHD",
+   "pred": "AEON CO. (M) BHD (126926-H)"
+  },
+  {
+   "doc": "sroie/X51006857137",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1056-UPTOWN",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006857137",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1056-UPTOWN",
+   "pred": "LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51006857540",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "BECON ENTERPRISE SDN BHD",
+   "pred": "BECON STATIONER"
+  },
+  {
+   "doc": "sroie/X51006912976",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "THE TOAST F&B SDN BHD",
+   "pred": "THE TOAST F&B SDN BHD (965752-T)"
+  },
+  {
+   "doc": "sroie/X51006912998",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "BHPETROL PERMAS JAYA 2",
+   "pred": "BHPETROL PERMAS JAYA"
+  },
+  {
+   "doc": "sroie/X51006913018",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "AEON CO. (M) BHD",
+   "pred": "AEON CO. (M) BHD (126926-H)"
+  },
+  {
+   "doc": "sroie/X51006913060",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "2, JALAN TAMPOI 7/4,KAWASAN PERINDUSTRIAN TAMPOI,81200 JOHOR BAHRU,JOHOR",
+   "pred": "12, JALAN TAMPOI 7/4, KAWASAN PERINDUSTRIAN TAMPOI, 81200 JOHOR BAHRU, JOHOR"
+  },
+  {
+   "doc": "sroie/X51006913060",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "2, JALAN TAMPOI 7/4,KAWASAN PERINDUSTRIAN TAMPOI,81200 JOHOR BAHRU,JOHOR",
+   "pred": "12, JALAN TAMPOI 7/4, KAWASAN PERINDUSTRIAN TAMPOI, 81200 JOHOR BAHRU, JOHOR"
+  },
+  {
+   "doc": "sroie/X51006913060",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "21 MAY 2018",
+   "pred": "12 MAY 2018 18:26"
+  },
+  {
+   "doc": "sroie/X51007103649",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "RM 48.90",
+   "pred": "100.00"
+  },
+  {
+   "doc": "sroie/X51007103687",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "1.90",
+   "pred": "2.00"
+  },
+  {
+   "doc": "sroie/X51007231346",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "JLN PERMAS 9/5, BDR PERMAS JAYA 81750, JOHOR BAHRU",
+   "pred": "JLN PERMAS 9/5, BDR PERMAS JAYA 81750, JOHOR BAHRU SITE: 1719"
+  },
+  {
+   "doc": "sroie/X51007231372",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GLOBAL FOOD EMPIRE SDN BHD",
+   "pred": "GLOBAL FOOD EMPIRE SDN BHD LEMON TREE RESTAURANT"
+  },
+  {
+   "doc": "sroie/X51007231372",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "GLOBAL FOOD EMPIRE SDN BHD",
+   "pred": "GLOBAL FOOD EMPIRE SDN BHD\nLEMON TREE RESTAURANT"
+  },
+  {
+   "doc": "sroie/X51007433809",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "SYARIKAT KAM LAI SEONG SDN BHD",
+   "pred": "SYARIKAT KAM LAI SEONG SDN BHD (CO\nNO. 95156P)"
+  },
+  {
+   "doc": "sroie/X51007579714",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "PELITA SAMUDRA PERTAMA (M) SDN BHD.",
+   "pred": "NASI KANDAR PELITA"
+  },
+  {
+   "doc": "sroie/X51007579714",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "PELITA SAMUDRA PERTAMA (M) SDN BHD.",
+   "pred": "NASI KANDAR PELITA"
+  },
+  {
+   "doc": "sroie/X51007579714",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "NO.2-1,JALAN KAMARUDDIN ISA 31400 IPOH,PERAK DARUL RIDZUAN",
+   "pred": "PELITA SAMUDRA PERTAMA (M) SDN BHD. NO.2-1,JALAN KAMARUDDIN ISA 31400 IPOH,PERAK DARUL RIDZUAN"
+  },
+  {
+   "doc": "sroie/X51007846283",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "AEON CO. (M) BHD",
+   "pred": "AEON CO. (M) BHD (126926-H)"
+  },
+  {
+   "doc": "sroie/X51007846321",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "103.85",
+   "pred": "200.00"
+  },
+  {
+   "doc": "sroie/X51007846355",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "AEON CO. (M) BHD",
+   "pred": "AEON CO. (M) BHD (126926-H)"
+  },
+  {
+   "doc": "sroie/X51007846358",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "EXQUISITE GARDEN SDN BHD",
+   "pred": "OLD TOWN WHITE COFFE"
+  },
+  {
+   "doc": "sroie/X51007846358",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT NO R134,GIANT HYPERMARKET PLENTONG NO3, JALAN MASAI LAMA 81750 MASAI. JAHOR BAHRU",
+   "pred": "LOT NO R134,GIANT HYPERMARKET PLENTONG NO3, JALAN MASAI LAMA 81750 MASAI. JOHOR BAHRU"
+  },
+  {
+   "doc": "sroie/X51007846358",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "EXQUISITE GARDEN SDN BHD",
+   "pred": "OLD TOWN WHITE COFFE"
+  },
+  {
+   "doc": "sroie/X51007846358",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LOT NO R134,GIANT HYPERMARKET PLENTONG NO3, JALAN MASAI LAMA 81750 MASAI. JAHOR BAHRU",
+   "pred": "LOT NO R134, GIANT HYPERMARKET PLENTONG NO3, JALAN MASAI LAMA 81750 MASAI. JOHOR BAHRU"
+  },
+  {
+   "doc": "sroie/X51007846360",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "NO. 33, JALAN HARMONIUM TAMAN DESA TEBRAU 81100 JOHOR BAHRU",
+   "pred": "IKEA TEBRAU NO.33, JALAN HARMONIUM TAMAN DESA TEBRAU 81100 JOHOR BAHRU"
+  },
+  {
+   "doc": "sroie/X51007846360",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "NO. 33, JALAN HARMONIUM TAMAN DESA TEBRAU 81100 JOHOR BAHRU",
+   "pred": "IKEA TEBRAU NO.33, JALAN HARMONIUM TAMPAN DESA TEBRAU 81100 JOHOR BAHRU"
+  },
+  {
+   "doc": "sroie/X51007846379",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "AEON CO. (M) BHD",
+   "pred": "AEON CO. (M) BHD (126926-H)"
+  },
+  {
+   "doc": "sroie/X51007846396",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "7.35",
+   "pred": "20.00"
+  },
+  {
+   "doc": "sroie/X51007846397",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "UNIHAKKA INTERANTIONAL SDN BHD",
+   "pred": "UNIHAKKA INTERNATIONAL SDN BHD"
+  },
+  {
+   "doc": "sroie/X51007846397",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "UNIHAKKA INTERANTIONAL SDN BHD",
+   "pred": "UNIHAKKA INTERNATIONAL SDN BHD"
+  },
+  {
+   "doc": "sroie/X51007846397",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "21 JUN 2018",
+   "pred": "12 JUN 2018 18:30"
+  },
+  {
+   "doc": "sroie/X51007846400",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "KOREAN DINE SDN BHD",
+   "pred": "NAM SAN SEOUL KOREAN BBQ"
+  },
+  {
+   "doc": "sroie/X51007846400",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "KOREAN DINE SDN BHD",
+   "pred": "NAM SAN SEOUL KOREAN BBQ"
+  },
+  {
+   "doc": "sroie/X51007846403",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "NO.33,JALAN SELADANG TAMAN ABAD, 80250 JOHOR BAHRU, JOHOR ,MALAYSIA.",
+   "pred": "KSL CITY GF-S03B NO.33 , JALAN SELADANG TAMAN ABAD, 80250 JOHOR BAHRU, JOHOR,MALAYSIA."
+  },
+  {
+   "doc": "sroie/X51007846403",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "NO.33,JALAN SELADANG TAMAN ABAD, 80250 JOHOR BAHRU, JOHOR ,MALAYSIA.",
+   "pred": "NO.33 , JALAN SELADANG TAMAN ABAD, KSL CITY GF-S03B, 80250 JOHOR BAHRU, JOHOR, MALAYSIA"
+  },
+  {
+   "doc": "sroie/X51008042786",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "LEVEL 6, BANGUNAN TH, DAMANSARA UPTOWN3 NO.3 , JALAN SS21/39,47400 PETALING JAYA SELANGOR",
+   "pred": "LEVEL 6, BANGUNAN TH, DAMANSARA UPTOWN3 NO.3, JALAN SS21/39,47400 PETALING JAYA SЕLANGOR"
+  },
+  {
+   "doc": "sroie/X51008042787",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VEG FISH FARM THAI RESTAURANT S/B",
+   "pred": "FISH FARM THAI RESTAURANT"
+  },
+  {
+   "doc": "sroie/X51008042787",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "KM 4, JLN AMPANG, HULU LANGAT, 68000 AMAPNG, SELANGOR.",
+   "pred": "KM 4, JIN AMPANG, HULU LANGAT, 68000 AMAPNG, SELANGOR."
+  },
+  {
+   "doc": "sroie/X51008042787",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VEG FISH FARM THAI RESTAURANT S/B",
+   "pred": "FISH FARM THAI RESTAURANT"
+  },
+  {
+   "doc": "sroie/X51008042787",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "KM 4, JLN AMPANG, HULU LANGAT, 68000 AMAPNG, SELANGOR.",
+   "pred": "KM 4, JIN AMPANG, HULU LANGAT, 68000 AMAPNG, SELANGOR"
+  },
+  {
+   "doc": "sroie/X51009008095",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "BOON SENG PAPER SDN BHD",
+   "pred": "BOON SENG PAPER SDN BHD (1248717-W)"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013aaprl",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH Dư án quỹ đất đường sắt DA QĐ doc tuyến ĐS Tổ 3 Khu 2 P. Cẩm Sơn, TP. Cẩm Phả, T.QN",
+   "pred": "DA QĐ dọc tuyến ĐS Tổ 3 Khu 2 P. Cầm Sơn, TP. Cảm Phà, T. QN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013aaprl",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH Dư án quỹ đất đường sắt DA QĐ doc tuyến ĐS Tổ 3 Khu 2 P. Cẩm Sơn, TP. Cẩm Phả, T.QN",
+   "pred": "P. Cầm Sơn, TP. Cảm Phà, T. QN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013aqosh",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VM% QNH 88 Trần Phú"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013aqosh",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 86 Trần Phú Số 86 Đường Trần Phú, P. Cẩm Tây TP Cẩm Phả, T.Quảng Ninh.",
+   "pred": "Số 88 Đường Trần Phú, P. Cẩm Tây Vincommerce TP Cẩm Phá, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013aqosh",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VM% QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013aqosh",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 86 Trần Phú Số 86 Đường Trần Phú, P. Cẩm Tây TP Cẩm Phả, T.Quảng Ninh.",
+   "pred": "Số 88 Đường Trần Phú, P. Cầm Tây, Vincommerce TP Cầm Phá, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013bajyy",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 1060-1062 Trần Phú Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1080-1082 Đường Trần Phú, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013bajyy",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 1060-1062 Trần Phú Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "1080-1082 Đường Trần Phú, TP. Cầm Phà, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013bxoir",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Thôn Phú Thuỵ, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "pred": "Thôn Phú Thụy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013bxoir",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Thôn Phú Thuỵ, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "pred": "Thôn Phú Thuy, Xà Phú Thị, Huyện Gia Lám, TP Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013byufi",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "CH THỜI TRANG ADIDAS",
+   "pred": "Abidas"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013byufi",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "17A, KP.11,P.BTD, Q. Bình Tân",
+   "pred": "17A, KP.11, P.BTD, Q. Binh Tan"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013byufi",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "CH THỜI TRANG ADIDAS",
+   "pred": "ch thời trang Abidas"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013byufi",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "17A, KP.11,P.BTD, Q. Bình Tân",
+   "pred": "17A, KP.11, P.BTD, Q. Binh Tan"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013cleap",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+ QNH 112 Thanh Niên Số 112 Thanh Niên, P. Cẩm Thành TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 112 Thanh Niên, P. Cẩm Thành, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013cleap",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "partial",
+   "gold": "222.000",
+   "pred": "22.000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013cleap",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cảm Phá, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013cleap",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 112 Thanh Niên Số 112 Thanh Niên, P. Cẩm Thành TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 112 Thanh Niên, P. Cầm Thành"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013cleap",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "partial",
+   "gold": "222.000",
+   "pred": "22000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013dxysa",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Hồ 7 khu Tân Lập 4- P.Cẩm Thủy Tp Cẩm Phả - Quảng Ninh",
+   "pred": "Tổ 7 khu tân lập 4 P. cẩm thủy Tp. cầm phá quảng ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013dxysa",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "11/08/2020 20:50",
+   "pred": "11/0B/2020 - 20"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013dxysa",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Hồ 7 khu Tân Lập 4- P.Cẩm Thủy Tp Cẩm Phả - Quảng Ninh",
+   "pred": "Tổ 7 khu tân lập 4 P. cẩm thủy Tp. cầm phá quảng ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013dxysa",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "11/08/2020 20:50",
+   "pred": "11/0B/2020 - 20"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013egelf",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "TP Cẩm Phả, T.Quảng Ninh",
+   "pred": "TP Cẩm Hà T Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013egelf",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "Vincommerce",
+   "pred": "VIÊN VIÊN CNH SỐ TRÀO PHÍ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013egelf",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "TP Cẩm Phả, T.Quảng Ninh",
+   "pred": "Đường Trình Trong Cần Tây Vincommerce TP Cần Hà T Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013egelf",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Ngày bán: 10/08/2020 11:33",
+   "pred": "10/0B/2020 11133 11:00078938"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013eituj",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Thôn Phú Thụy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "pred": "Thôn Phú Thuy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013fwuow",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013fwuow",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013giwqv",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "missed",
+   "gold": "5780 - TINO - Kho CN DMX Dong Anh",
+   "pred": null
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013giwqv",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "missed",
+   "gold": "400.000",
+   "pred": null
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013giwqv",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "Công ty Cổ Phần Thế Giới Di Động",
+   "pred": "Công ty Có Phần Thế Giới Di Động"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013giwqv",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "5780 - TINO - Kho CN DMX Dong Anh",
+   "pred": "780-HNO-Kho"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013giwqv",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "missed",
+   "gold": "400.000",
+   "pred": null
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013gxbkt",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "SCTC CÔ THỎ 104 TRẦN PHÚ - CẨM PHẢ",
+   "pred": "SCTC CÔ THỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013gxbkt",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "104 Trần Phú phường Cám Tây - Thành phố Cẩm Phả - Quảng Ninh",
+   "pred": "104 Trần Phú phường Cẩm Tây - thành phố Cẩm Phả - Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013gxbkt",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "SCTC CÔ THỎ 104 TRẦN PHÚ - CẨM PHẢ",
+   "pred": "SCTC CÔ THỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013gxbkt",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "104 Trần Phú phường Cám Tây - Thành phố Cẩm Phả - Quảng Ninh",
+   "pred": "104 Trần Phú phường cấm tây - thành phố cấm Phả - Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013hopjk",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+ QNH Tổ 7, Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P.Cẩm Bình, TP. Cẩm Phả, QNH",
+   "pred": "Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013hopjk",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce P. Cấm Bình"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013hopjk",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Tổ 7, Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P.Cẩm Bình, TP. Cẩm Phả, QNH",
+   "pred": "Khu Minh Tiến A, Tổ 7, Khu Minh Tiến A, TP. Cẩm Phà, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013hrtto",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 690 Trần Phú Số 590 Trần Phú, P. Cẩm Thuỷ TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 690 Trần Phú, P. Cẩm Thủy, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013hrtto",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cấm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013hrtto",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 690 Trần Phú Số 590 Trần Phú, P. Cẩm Thuỷ TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 690 Trần Phú, P. Cầm Thuy"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013ibbrd",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Sủi Phú Thị Gia Làm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013idjei",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "NHÀ SÁCH GD-TC CẨM PHẢ",
+   "pred": "NHÀ SÁCH GD-TC CẨM PHÁ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013idjei",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013idjei",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "NHÀ SÁCH GD-TC CẨM PHẢ",
+   "pred": "NHÀ SÁCH GD-TC CẨM PHÁ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013idjei",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "Đc. 212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013ihpxr",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "248 Cổ Bi - Gia Lâm - Hà Nội",
+   "pred": "248 Có Bị Gia Lâm - Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013ihpxr",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "248 Cổ Bi - Gia Lâm - Hà Nội",
+   "pred": "248 Có Bị Gia Lâm - Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013iijxa",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Số 112 Thanh Niên. P. Cẩm Thanh TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 112 Thanh Niên, P. Cẩm Thành, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013iijxa",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cảm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013iijxa",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Số 112 Thanh Niên. P. Cẩm Thanh TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 112 Thanh Niên, P. Cầm Thành"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013imsqw",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Súi Phú Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013iyqnr",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "TÊN ĐẠI LÝ:",
+   "pred": "WINPART"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013iyqnr",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Dia Chi Tổ 8 KHU 3B, P.CAM TRUNG",
+   "pred": "TỔ 3 KHU 38, P. CẨM TRUNG"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013iyqnr",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "TÊN ĐẠI LÝ:",
+   "pred": "WINPART"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013iyqnr",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Dia Chi Tổ 8 KHU 3B, P.CAM TRUNG",
+   "pred": "bịn chỉ TỔ 3 KHU 38, P. CẦM TRUNG"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013joykg",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Sủi Phú Thị Gia Làm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013jwjnj",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+QNH 590 Trần Phú Số 590 Trần Phú, P. Cẩm Thủy TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 590 Trần Phú, P. Cẩm Thủy, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013jwjnj",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013jwjnj",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH 590 Trần Phú Số 590 Trần Phú, P. Cẩm Thủy TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Sỏ 590 Trần Phú, P. Cầm Thủy"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013kqcxc",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VM+ anh 500 Trần Phú"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013kqcxc",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "NHÀ QNH 590 Trần Phú Số 590 Trần Phú, P.Cẩm Thủy TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 590 Trần Phú, P. Cẩm Thủy, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013kqcxc",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cảm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013kqcxc",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "NHÀ QNH 590 Trần Phú Số 590 Trần Phú, P.Cẩm Thủy TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 590 Trần Phú, P. Cảm Thủy"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013lkqkg",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+ CNH Tổ 7. Khu Minh Tiến A Tổ 7, khu Minh Tiến A P. Cẩm Bình, TP Cẩm Phả, QNH",
+   "pred": "Tổ 7, Khu Minh Tiến A, P. Cẩm Bình, TP. Cẩm Phả, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013lkqkg",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce T67, Khu Minh Tần A"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013lkqkg",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ CNH Tổ 7. Khu Minh Tiến A Tổ 7, khu Minh Tiến A P. Cẩm Bình, TP Cẩm Phả, QNH",
+   "pred": "P. Cảm Bình, TP. Cầm Pha, QIH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013lozjt",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "CỮA HÀNG NĂM OÁNH",
+   "pred": "CỬA HÀNG NĂM OÁNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013lozjt",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Thôn Phú Thuỵ, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "pred": "Thôn Phú Thụy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013lozjt",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "CỮA HÀNG NĂM OÁNH",
+   "pred": "CỬA HÀNG NĂM OÁNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013lozjt",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Thôn Phú Thuỵ, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "pred": "Thón Phú Thuy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013lozjt",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Ngày: 11-08-2020",
+   "pred": "11-08-2(120"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013luuro",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+ QNH 86 Trần Phú Số 38 Đường Trần Phú, P. Cẩm Tây TP Cẩm Phả, T.Quảng Ninh",
+   "pred": "Số 38 Đường Trần Phú, P. Cẩm Tây, TP Cẩm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013luuro",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VM% QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013luuro",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 86 Trần Phú Số 38 Đường Trần Phú, P. Cẩm Tây TP Cẩm Phả, T.Quảng Ninh",
+   "pred": "Số 38 Đường Trần Phú, P. Cầm Tây, Vincommerce TP Cảm Phá, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013mfogg",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "TT 101 CC 12 Tầng Ngõ 25 Vũ Ngọc Phan",
+   "pred": "TT101CC 12 Tang Ngô 25 Vũ Ngọc Phan"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013mfogg",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "TT 101 CC 12 Tầng Ngõ 25 Vũ Ngọc Phan",
+   "pred": "TT101CC 12 Tang Ngô 12A128 25 Vũ Ngọc Phan"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013moepq",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Thôn Phú Thụy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "pred": "Thôn Phú Thuy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013mqmzy",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "VN + QNH Dự án KDC lấn biến cọc 6 DA khu DCLB cọc 6,P.Cẩm Sơn TP. Cẩm Phả, T.Quảng Ninh",
+   "pred": "Dự án KDC lấn biển cọc 6, DA khu DCLB cọc 8, P. Cẩm Sơn, TP. Cẩm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013mqmzy",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "10.000 10.000",
+   "pred": "10.000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013mqmzy",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VN + QNH Dự án KDC lấn biến cọc 6 DA khu DCLB cọc 6,P.Cẩm Sơn TP. Cẩm Phả, T.Quảng Ninh",
+   "pred": "TP. Câm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013mqmzy",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "10.000 10.000",
+   "pred": "10000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013mzyyu",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "Saiigono Co.op Co.op Food HN THE K-PARK",
+   "pred": "Co.op Food HN THE K-PARK"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013mzyyu",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "P. Phu La, Q. Ha Dong, Tp Ha Noi tai Khu do thi moi Van Phu,",
+   "pred": "Tang 1,SH42 - Toa K3,Cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phu, P. Phu La, Q. Ha Dong, Tp Ha Noi"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013mzyyu",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "Saiigono Co.op Co.op Food HN THE K-PARK",
+   "pred": "Saigon Co.op"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013mzyyu",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "P. Phu La, Q. Ha Dong, Tp Ha Noi tai Khu do thi moi Van Phu,",
+   "pred": "Co.op Food HN THE K-PARK Tang 1,SH42 - Toa K3,Cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phu, P. Phu La, Q. Ha Dong, Tp Ha Noi"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013nfkiq",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "SCTC cổ THỎ 104 TRẦN PHÚ - CẨM PHẢ",
+   "pred": "SCTC CÔ THỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013nfkiq",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "104 Trần Phú, phường Cẩm Tê, Thành phố Cẩm",
+   "pred": "104 Trần Phú - phường Cấm Tê Thành phố Cẩm Phả - Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013nfkiq",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "SCTC cổ THỎ 104 TRẦN PHÚ - CẨM PHẢ",
+   "pred": "SCTC CÔ THỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013nfkiq",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "104 Trần Phú, phường Cẩm Tê, Thành phố Cẩm",
+   "pred": "104 Trần Phú - phường Cấm Tê Thành phố Cấm Phả - Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013nsktd",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VM+ QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013nsktd",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Dự án quỹ đất đường sắt DA QĐ đọc tuyến ĐS Tổ 3 Khu 2 P.Cẩm Sơn, TP. Cẩm Phả, T.QN",
+   "pred": "DA QĐ dọc tuyến ĐS Tổ 3 Khu 2 Uncommerced P. Cẩm Sơn, TP. Cẩm Phả, T. QNN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013nsktd",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VM+ QNH Dự án quỹ đất đường sắt\nDA QĐ dọc tuyến ĐS Tổ 3 Khu 2\nUncommerced P. Cảm Sơn, TP. Cảm Phà, T. QNN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013nsktd",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "missed",
+   "gold": "VM+ QNH Dự án quỹ đất đường sắt DA QĐ đọc tuyến ĐS Tổ 3 Khu 2 P.Cẩm Sơn, TP. Cẩm Phả, T.QN",
+   "pred": null
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013ogvmp",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013ogvmp",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013ogxhv",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "HỆ THỐNG SIÊU THỊ MỸ PHẨM SAMMI SHOP",
+   "pred": "HỆ THỐNG SIÊU THỊ MỸ PHÁM SAMMISHOP"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013oxnpr",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Súi Phú Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013oxnpr",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Súi Phú Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013plnfr",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "22 Quang Trung, P10, Gò Vấp",
+   "pred": "22 Quang Trung, 1, P10, Gò Vấp"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013plnfr",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "partial",
+   "gold": "Ngày: 21.04.201 Giờ vào: 09.10 Giờ ra:",
+   "pred": "21.04.201"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013plnfr",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "22 Quang Trung, P10, Gò Vấp",
+   "pred": "22 Quang Trung, 1, P10, Gò Vấp"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013plnfr",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "partial",
+   "gold": "Ngày: 21.04.201 Giờ vào: 09.10 Giờ ra:",
+   "pred": "21.04.201"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013qlpau",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM + QNH 112 Thanh Niên Số 112 Thanh Niên, P.Cẩm Thành TP Cẩm Phả, Quảng Ninh",
+   "pred": "Số 112 Thanh Niên, P. Cẩm Thành, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013qlpau",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cảm Phá, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013qlpau",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 112 Thanh Niên Số 112 Thanh Niên, P.Cẩm Thành TP Cẩm Phả, Quảng Ninh",
+   "pred": "Số 112 Thanh Niên, P. Cầm Thành"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013rcioe",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Thôn Phú Thuỵ, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "pred": "Thôn Phú Thụy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013rcioe",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Thôn Phú Thuỵ, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "pred": "Thôn Phú Thuy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013rpxpi",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "PHỐ MỎ",
+   "pred": "PHÓ MÔ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013rpxpi",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Tổ 7 khu Tân Lập 4 - Phường Cẩnm Thuỷ Tp Cẩm Phả - Quảng Ninh",
+   "pred": "Tổ 7 Khu Tân Lập 4, P Cẩm Thủy - Tp. Cẩm Phả - Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013rpxpi",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "PHỐ MỎ",
+   "pred": "PHÓ MÔ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013rpxpi",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Tổ 7 khu Tân Lập 4 - Phường Cẩnm Thuỷ Tp Cẩm Phả - Quảng Ninh",
+   "pred": "Tổ 7 Khu Tân Lập 4, P Cầm Thủy - 1, Tp. Cẩm Phả - Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013satyz",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM QNH Tổ 7 , Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P.Cẩm Bình, TP.Cẩm Phả, QNH",
+   "pred": "Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013satyz",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM QNH Tổ 7 , Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P.Cẩm Bình, TP.Cẩm Phả, QNH",
+   "pred": "P. Cẩm Bình, TP. Cầm Phà, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013sqwxo",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Dự án KDC lấn biển coc 6 DA khu DCLB coc 6,P.Cẩm Sơn TP. Cẩm Phả, T.Quảng Ninh",
+   "pred": "DA khu DCLB cọc 6, P. Cẩm Sơn TP. Cẩm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013sqwxo",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VM? QNH Dự án KDC lần biến cọc 8"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013sqwxo",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Dự án KDC lấn biển coc 6 DA khu DCLB coc 6,P.Cẩm Sơn TP. Cẩm Phả, T.Quảng Ninh",
+   "pred": "DA khu DCLB cọc 6, P. Cảm Sơn Vincommerce TP. Cẩm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013syjan",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013syjan",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013tifph",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "saigon co.op co.op Food HN THE K-PARK",
+   "pred": "Saigon Co.op"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013tifph",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Tang 1,SH42 - Toa K3, Cong trinh chung cu",
+   "pred": "Phú Là, Điều Doni, Vập Phi Hói"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013tifph",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Ngày: 20/09/2019 13:24:28",
+   "pred": "20/09/2017 13:24:28"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013tifph",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "saigon co.op co.op Food HN THE K-PARK",
+   "pred": "Saigon Co.op"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013tifph",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Tang 1,SH42 - Toa K3, Cong trinh chung cu",
+   "pred": "CO.OP FORD THE X-PANK, Ha, 50 thue, 030712, X-PANK"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013tifph",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Ngày: 20/09/2019 13:24:28",
+   "pred": "20/09/2017 13:24:28"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013vilkn",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "NGÀY KINH DOANH 09/08/2020 NGÀY HỆ THỐNG : 09/08/2020 12:54",
+   "pred": "00/08/2020 12:54"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013vtqrc",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Số 463 Tổ 66 Khu Diêm Thuý Số 483, Tổ 86, Khu Diêm Thuỷ P. Cẩm Đông, TP. Cẩm Phả",
+   "pred": "Số 463, Tổ 66, Khu Diêm Thủy P. Cẩm Đông, TP. Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013vtqrc",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Số 463 Tổ 66 Khu Diêm Thuý Số 483, Tổ 86, Khu Diêm Thuỷ P. Cẩm Đông, TP. Cẩm Phả",
+   "pred": "Số 463, Tổ 66, Khu Diêm Thủy"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013waefm",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013waefm",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "38.000đ",
+   "pred": "36.000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013waefm",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013waefm",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "38.000đ",
+   "pred": "36.000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wgrej",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "Saigon Co.op Co.op Food HN THE K-PARK",
+   "pred": "Co.op Food HN THE K-PARK"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wgrej",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Tang 1,SH42 - Toa K3, Cong trinh chung cu ket hop đich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phu, P. Phu La, Q. Ha Dong, Tp Ha Noi",
+   "pred": "Tang 1,SH42 - Toa K3, Cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phuy P. Phu La, Q. Ha Dong, Tp. Ha Noi"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wgrej",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Ngày: 19/09/20199 18:00:35",
+   "pred": "19/09/2019 18:00:35"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wgrej",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "Saigon Co.op Co.op Food HN THE K-PARK",
+   "pred": "Saigon Co.op"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wgrej",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Tang 1,SH42 - Toa K3, Cong trinh chung cu ket hop đich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phu, P. Phu La, Q. Ha Dong, Tp Ha Noi",
+   "pred": "Co.op Food HN THE K-PARK Tang 1,SH42 - Toa K3, Cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phuy P. Phu La, Q. Ha Dong, Tp. Ha Noi"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wgrej",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Ngày: 19/09/20199 18:00:35",
+   "pred": "19/09/2019 18:00:35"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wokiq",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "Saigon Co.op Co.op Food HN THE K-PARK",
+   "pred": "Saigon Co.op"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wokiq",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Tang 1, SH 42 Toa K3 cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai khu do thi moi Van Phu, P. Phu La, Q. Ha Dong, Tp Ha Noi",
+   "pred": "P. Phú Khu do ta bằng, Tp Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wokiq",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "Saigon Co.op Co.op Food HN THE K-PARK",
+   "pred": "Saigon Co.op"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wokiq",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Tang 1, SH 42 Toa K3 cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai khu do thi moi Van Phu, P. Phu La, Q. Ha Dong, Tp Ha Noi",
+   "pred": "P. Phú Khu do ta bằng, Tp Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wrunk",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VINMART"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wrunk",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Tổ 7, khu Minh Tiến A P. Cẩm Bình. TP. Cẩm Phả. QNH VM+ QNH Tổ 7,Khu Minh Tiến A",
+   "pred": "Tổ 7, Khu Minh Tiến A, P. Cẩm Bình, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wrunk",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce P. Cầm Bình"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wrunk",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Tổ 7, khu Minh Tiến A P. Cẩm Bình. TP. Cẩm Phả. QNH VM+ QNH Tổ 7,Khu Minh Tiến A",
+   "pred": "QIM% QNH TỐ 7, Khu Minh Tiến A Tô 7, Khu Minh Tiến A, TP. Cầm Phá, Ginh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wuprd",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "phố Nguyễn Quốc Tru ngõ 299 phố Trung Kính hoặc đi vào phố đối diện Nhà số 7 Khu B Liền kè A10 Nam Trung Yên (Đi vào",
+   "pred": "Nhà số 7 Khu B Liền kề A 10 Nam Trung Yên (Đi vào ngõ 299 phố Trung Kính hoặc đi vào phố đối diện phố Nguyễn Quốc Trị)"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013wuprd",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "phố Nguyễn Quốc Tru ngõ 299 phố Trung Kính hoặc đi vào phố đối diện Nhà số 7 Khu B Liền kè A10 Nam Trung Yên (Đi vào",
+   "pred": "Nhà số 7 Khu B Liền kề A 10 Nam Trung Yên (Đi vào ngõ 299 phố Trung Kính hoặc đi vào phố đối diện phố Nguyễn Quốc Trị)"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013xbegl",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "TÊN ĐẠI LÝ: VINMART",
+   "pred": "WINMART"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013xbegl",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "ĐỊA CHỈ: TỔ 7 KHU MINH TIẾN A. P.CÂ",
+   "pred": "TỔ 7 KHU MINH TIẾN A,P.CÁ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013xbegl",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "TÊN ĐẠI LÝ: VINMART",
+   "pred": "WINMART"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013xbegl",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "ĐỊA CHỈ: TỔ 7 KHU MINH TIẾN A. P.CÂ",
+   "pred": "TỔ 7 KHU MINH TIẾN A,P.CÁ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013ykdsv",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "SCTC CÔ THỒ 104 TRẦN PHÚ - CẨM PHẢ",
+   "pred": "SCTC CÔ THỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013ykdsv",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "104 Trần Phú, phường Cẩm Tây, Thành phố Cẩm Phả - Quảng Ninh",
+   "pred": "104 Trần Phú phường Cẩm Tây Thành phố Cẩm Phá - Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013ykdsv",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Ngày: 08/08/2020 (08:26 CH - 08:26 CH)",
+   "pred": "08/03/2020"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013ykdsv",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "SCTC CÔ THỒ 104 TRẦN PHÚ - CẨM PHẢ",
+   "pred": "SCTC CÔ THỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013ykdsv",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "104 Trần Phú, phường Cẩm Tây, Thành phố Cẩm Phả - Quảng Ninh",
+   "pred": "104 Trần Phú - phường cấm Tây Thành phố Cấm - Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013ykdsv",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Ngày: 08/08/2020 (08:26 CH - 08:26 CH)",
+   "pred": "08/03/2020 (0B 26CH 0826 CH)"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013zrrly",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Số 463 Tổ 66 Khu Diêm Thuỷ Số 483, Tổ 8, Khu Diêm Thuỷ P. Cẩm Đồng, TP. Cẩm Phả",
+   "pred": "Số 463 Tổ 66 Khu Diêm Thủy Số 483, Tổ 86, Khu Diêm Thủy P. Cẩm Đông, TP. Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013zrrly",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce P. Cầm Đông, TP. Cầm Phá"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145013zrrly",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Số 463 Tổ 66 Khu Diêm Thuỷ Số 483, Tổ 8, Khu Diêm Thuỷ P. Cẩm Đồng, TP. Cẩm Phả",
+   "pred": "Số 463 Tổ 66 Khu Diêm Thủy Số 483, Tổ 86, Khu Diêm Thủy"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ajgaf",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Sùi Pho Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ajgaf",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Sùi Pho Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014avuac",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Số 463 Tổ 66 Khu Diêm Thuỷ Số 483, Tổ 8, Khu Diêm Thủy P. Cẩm Đông, TP. Cẩm Phả",
+   "pred": "Số 463, Tổ 66, Khu Diêm Thủy P. Cẩm Đông, TP. Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014avuac",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce P. Cám Đông, TP. Cầm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014avuac",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Số 463 Tổ 66 Khu Diêm Thuỷ Số 483, Tổ 8, Khu Diêm Thủy P. Cẩm Đông, TP. Cẩm Phả",
+   "pred": "Số 463, Tổ 66, Khu Diêm Thủy"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014awxdd",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "Saigon Co.op Co.op Food HN THE K-PARK",
+   "pred": "Co.op Food HN THE K-PARK"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014awxdd",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "P. Phu La, Q. Ha Dong, Tp Ha Noi Tang 1, SH42 - Toa K3, cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung nha o Hi Brand tai khu do thi moi Van Phu,",
+   "pred": "Tang 1, SH42 - Toa K3, Cong trinh chung cu ket hop dich vu tren o dat H-cT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phu P. Phu La, 0. Ha Dong, Tp Ha Noi"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014awxdd",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "Saigon Co.op Co.op Food HN THE K-PARK",
+   "pred": "Saigon Co.op"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014awxdd",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "P. Phu La, Q. Ha Dong, Tp Ha Noi Tang 1, SH42 - Toa K3, cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung nha o Hi Brand tai khu do thi moi Van Phu,",
+   "pred": "Co.op Food HN THE K-PARK, Tang 1, SH42 - Toa K3, Cong trinh chung cu ket hop dich vu tren o dat H-cT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phu, P. Phu La, 0. Ha Dong, Tp Ha Noi"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014bphyw",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "TÊN ĐẠI LÝ: VINMART",
+   "pred": "VINMART"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014bphyw",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "ĐỊA CHỈ: Số 1060-1062 TRẦN PHÚ, P.C",
+   "pred": "SỐ 1060-1062 THẦN PHÚ, P.C"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014bphyw",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "NGÀY: 13/06/2020 15:57:03",
+   "pred": "196/20 15:57:03"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014bphyw",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "TÊN ĐẠI LÝ: VINMART",
+   "pred": "VINMART"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014bphyw",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "ĐỊA CHỈ: Số 1060-1062 TRẦN PHÚ, P.C",
+   "pred": "SỐ 1060-1062 THẦN PHÚ.P.C"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014bphyw",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "NGÀY: 13/06/2020 15:57:03",
+   "pred": "07/01/2520 15:57:03"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014bqwna",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014bqwna",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cfgjy",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Số: CCB ngõ 168 Kim Giang P.Đại Kim, Q.Hoàng Mai, HN",
+   "pred": "Số 1008 ngõ 186 Kim Giang, P Đại Kim, Q Hoàng Mai, Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cfgjy",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce P Đại Kin"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cfgjy",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Số: CCB ngõ 168 Kim Giang P.Đại Kim, Q.Hoàng Mai, HN",
+   "pred": "1008 Kim Giang, Q Hoàng Nai, Bổ Đại Kin, 1008 ngô 186 Kim Giang"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cgbau",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "SCTC CÔ THỎ 104 TRẦN PHÚ - CẨM PHẢ",
+   "pred": "SCTC CÔ THỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cgbau",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "85.000đ",
+   "pred": "75.000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cgbau",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "SCTC CÔ THỎ 104 TRẦN PHÚ - CẨM PHẢ",
+   "pred": "SCTC CÔ THỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cgbau",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "104 Trần Phú phường Cẩm Tây Thành phố Cẩm Phả - Quảng Ninh",
+   "pred": "104 Trần Phú - phường Cấm Tây - Thành phố Cấm - Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cgbau",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "85.000đ",
+   "pred": "75000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cgzmv",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Và Chợ Sủi Phú Thị Gia Làm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cgzmv",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "missed",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": null
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cmcvj",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 112 Thanh Niên Số 111 Thanh Niên, P. Cẩm Thành TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 112 Thành Niên, P. Cảm Thành Ninh TP. Cầm Phá, Quảng Hình"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cmcvj",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "Vincommerce",
+   "pred": "Vincommerce TP. Cầm Phá, Quảng Hình"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cmcvj",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 112 Thanh Niên Số 111 Thanh Niên, P. Cẩm Thành TP.Cẩm Phả, Quảng Ninh",
+   "pred": "11 Số 112 Thành Niên, P. Cảm Thành Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cmghn",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cmghn",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cwfup",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM + CNH Tổ 7, Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH",
+   "pred": "Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014cwfup",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + CNH Tổ 7, Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH",
+   "pred": "Khu Minh Tiến A, Tổ 7, Khu Minh Tiến A, Vincommerce P. Cẩm Bình, TP. Cẩm Phà, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014czicu",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "MINIMART ANANAN",
+   "pred": "MINIMART ANAN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014czicu",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "MINIMART ANANAN",
+   "pred": "MINIMARTANAN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014diuoj",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "NHÀ SÁCH GD-TC CẨM PHẢ",
+   "pred": "NHÀ SÁCH GD-TC CẨM PHẢI"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014diuoj",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014diuoj",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014dkivp",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014dkivp",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "NHÀ SÁCH GD-TC CẨM PHẢ",
+   "pred": "NHÀ SÁCH GD-TC CẨM PHẢN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014dkivp",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "19 Đc: 212 Đường Trần Phú-Cẩm Phải"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014dspwj",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Sủi Phú Thị Gia Làm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014dwyzl",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Sủi Phù Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014dwyzl",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "MINIMART ANAN",
+   "pred": "Imminimart anant"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014dwyzl",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Sùi Phù Thị Gin Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014dxvde",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH 1060-1062 Trần Phú Số 1080-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1080-1062 Đường Trần Phú TP. Cẩm Phà, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014dxvde",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "VM+QNH 1060-1062 Trần Phú Số 1080-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "1060-1062 Trần Phú, Số 1080-1062 Đường Trần Phú, Cảm Phà, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014eilwc",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "Saigon Co.op Co.op Food HN THE K-PARK",
+   "pred": "Saigon Co.op"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014eilwc",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Tang 1,SH42 - Toa K3, Cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phu, P. Phu La, Q. Ha Dong, Tp Ha Noi",
+   "pred": "Tang 1,SH42 - Toa K3, Cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phuy P. Phu La, 0, Ha Dong, Tp Ha Noi"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014eilwc",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "Saigon Co.op Co.op Food HN THE K-PARK",
+   "pred": "Saigon Co.op"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014eilwc",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Tang 1,SH42 - Toa K3, Cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phu, P. Phu La, Q. Ha Dong, Tp Ha Noi",
+   "pred": "Tang 1,SH42 - Toa K3, Cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phuy P. Phu La, 0, Ha Dong, Tp Ha Noi"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014emqom",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Sủi Phú Thị Gia Làm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014epafb",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014epafb",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014erruh",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Thôn Phú Thuỵ, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "pred": "Thôn Phú Thụy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014erruh",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Thôn Phú Thuỵ, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "pred": "Thôn Phú Thuy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014etdhs",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ Mỹ Đình Tầng 1, nhà CT9.KĐT Mỹ Đình P. Liê Trì, Q. Mam Từ Liêm, HN",
+   "pred": "Tầng 1, nhà CTS, XĐT Mỹ Định, P. Hế Trí, Q. Nam Từ Liêm, HN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014etdhs",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VM% Blý Đình"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014etdhs",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ Mỹ Đình Tầng 1, nhà CT9.KĐT Mỹ Đình P. Liê Trì, Q. Mam Từ Liêm, HN",
+   "pred": "Tầng 1, nhà CTS, XĐT Mỹ Định, Vincommerce P. Hế Trí, 0, Nam Từ Liêm, HN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014etnjz",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Tổ 8 Khu 3B Cẩm Trung Tổ B, Khu 3B, P. Cẩm Trung TP.Cẩm Phả, T.Quảng Ninh",
+   "pred": "Tổ 8, Khu 38, P. Cẩm Trung, TP. Cẩm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014etnjz",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "10.800 10.800",
+   "pred": "10.800"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014etnjz",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce Tổ 8, Khu 38, P. Cảm Trung, TP. Cầm Pha, T. Quảng Hình"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014etnjz",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Tổ 8 Khu 3B Cẩm Trung Tổ B, Khu 3B, P. Cẩm Trung TP.Cẩm Phả, T.Quảng Ninh",
+   "pred": "VIM? ONH Tố 8 Khu 38 Cầm Trung"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014etnjz",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "10.800 10.800",
+   "pred": "10800"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014euevz",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VINMART"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014euevz",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Tổ 7. Khu Minh Tiến A Tổ 7 Khu Minh Tiến A P.Cam Binh TP Câm Phu, QNH",
+   "pred": "T67, Khu Minh Tiến A, P. Cẩm Bình, TP. Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014euevz",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce P. Cảm Bình, TP. Cầm Pha, ANH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014euevz",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Tổ 7. Khu Minh Tiến A Tổ 7 Khu Minh Tiến A P.Cam Binh TP Câm Phu, QNH",
+   "pred": "Khu Mình Tiến A, T67, Khu Minh Tiến A, Vincommerce P. Cảm Bình, TP. Cầm Pha, ANH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014evdcm",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Súi Phú Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014evdcm",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Súi Phú Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014fltno",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 690 Trần Phú Số 590 Trần Phú, P.Cẩm Thúy TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 590 Trần Phú, P. Cẩm Thúy, TP. Cẩm Phá, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014fltno",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cảm Phá, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014fltno",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 690 Trần Phú Số 590 Trần Phú, P.Cẩm Thúy TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 590 Trần Phú, P. Cảm Thúy"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014foimu",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "NM+ QNH 1060-1062 Trần PHú TP. Cẩm Phả, Quảng Ninh Số 10604062 Đường Trần Phú",
+   "pred": "Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014foimu",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "NM+ QNH 1060-1062 Trần PHú TP. Cẩm Phả, Quảng Ninh Số 10604062 Đường Trần Phú",
+   "pred": "1060-1062 Đường Trần Phú, TP. Cầm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014fsrkz",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Phuong Dong Hoa, Thị xa Di An, Tỉnh Bình Dương Toa nha A1, Ky tuc xa khu B, Khu pho Tan Hoa, CO.OPSMILE - A1 KHU B KTX DAI HOC QUOC GIA",
+   "pred": "Toa nha A1, Ky tuc xa khu B, Khu pho Tan Hoa, Phuong Dong Hoa, Thi xa Di An, Tinh Binh Duong"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014fsrkz",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Phuong Dong Hoa, Thị xa Di An, Tỉnh Bình Dương Toa nha A1, Ky tuc xa khu B, Khu pho Tan Hoa, CO.OPSMILE - A1 KHU B KTX DAI HOC QUOC GIA",
+   "pred": "CÓ CO.OPSMILE - A1 KHU B KTX DÀI HỌC QUỐC GIA THÁNG Toa nha A1, Ky tuc xa khu B, Khu pho Tan Hoa, Phuong Dong Hoa, Thi xa Di An, Tinh Binh Duong"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ftgca",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ftgca",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014fvnus",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Tổng tiền 236,990",
+   "pred": "17/08/2020-18:28"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014fvnus",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "Ngày: 17/08/2020 - 16:28",
+   "pred": "236,990"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014fvnus",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Sủi Phú Thị Gia Làm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014fvnus",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Tổng tiền 236,990",
+   "pred": "17/08/2020-18:28"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014fvnus",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "Ngày: 17/08/2020 - 16:28",
+   "pred": "236990"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014fzozs",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trần Phú Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014fzozs",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "Đc 212 Đường Trần Phú Cẩm Phà"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014gkruw",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ 81A Xuân Diệu Số 81A, đường Xuân Dâu P.Quản An, Q Tây Hồ, Hà Nội",
+   "pred": "Số 81A, đường Xuân Diệu, P. Quảng An, Q. Tây Hồ, Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014gkruw",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ 81A Xuân Diệu Số 81A, đường Xuân Dâu P.Quản An, Q Tây Hồ, Hà Nội",
+   "pred": "Số 81A, đường Xuân Diệu, P. Quản An, Q, Tây Hồ, Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014gniax",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VINMART"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014gniax",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VN+ QNH 1060-1062 Trần Phú Số 10404062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014gniax",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VIM4 ANH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014gniax",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VN+ QNH 1060-1062 Trần Phú Số 10404062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "1060-1062 Đường Tràn Phú, TP. Cầm Phá, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014gobol",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+QNH 1060-1062 Trần Phú Số 10601062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014gobol",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH 1060-1062 Trần Phú Số 10601062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "1060-1062 Đường Trần Phú, TP. Cầm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014hngsl",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "Đc: 212 Đường Trần Phú - Cẩm Phả Thời gian: 10:09:44 - 13/08/2020",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014hngsl",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "405.000đ",
+   "pred": "105.000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014hngsl",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "Đc: 212 Đường Trần Phú - Cẩm Phả Thời gian: 10:09:44 - 13/08/2020",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014hngsl",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "405.000đ",
+   "pred": "105.000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014hwaqw",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "PHÓ MỎ",
+   "pred": "PHỔ MỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014hwaqw",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Tổ 7 khu Tân Lập 4 - P.Cẩm Thủy Tp Cẩm Phả - Quảng Ninh",
+   "pred": "Tổ 7 khu Tân Lập 4 - P. Cẩm Thủy - Hoa Tp. Cẩm Phả - Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014hwaqw",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "H3/08/2020 - 17:10",
+   "pred": "13/08/2020 - 17:10"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014hwaqw",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "PHÓ MỎ",
+   "pred": "PHỔ MỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014hwaqw",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Tổ 7 khu Tân Lập 4 - P.Cẩm Thủy Tp Cẩm Phả - Quảng Ninh",
+   "pred": "Tổ 7 khu Tân Lập 4 - P. Cẩm Thủy - Hoa Phường Cẩm Thủy - Tp. Cẩm Phả - Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014hwaqw",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "H3/08/2020 - 17:10",
+   "pred": "13/08/2020 - 17:10"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ihdjg",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+QNH 1060-1062 Trần Phú Số 1080-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1080-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ihdjg",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH 1060-1062 Trần Phú Số 1080-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "1060-1062 Đường Trần Phú, Số 1080-1062, TP. Cảm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014iwlls",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 1060-1062 Trần Phú Số 10604062 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014iwlls",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "19.000 19.000",
+   "pred": "19.000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014iwlls",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cầm Phà, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014iwlls",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 1060-1062 Trần Phú Số 10604062 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú, QNH 1060-1062 Trần Phú"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014iwlls",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "19.000 19.000",
+   "pred": "19000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014jfoxg",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "Thanh Xuân",
+   "pred": "Tiệm đưà"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014jfoxg",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "Thanh Xuân",
+   "pred": "Tiệm đưà"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014jiwoe",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+QNH Tổ 8 Khu 3B Cẩm Trung Tổ 8, Khu 3B, P. Cẩm Trung TP. Cẩm Phả, T.Quảng Ninh",
+   "pred": "Tổ 8, Khu 3B, P. Cẩm Trung, TP. Cẩm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014jiwoe",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cầm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014jiwoe",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH Tổ 8 Khu 3B Cẩm Trung Tổ 8, Khu 3B, P. Cẩm Trung TP. Cẩm Phả, T.Quảng Ninh",
+   "pred": "Tổ 8, Khu 3B, P. Cầm Trung"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014jizcq",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Số 5 Cẩm Tây - Cẩm Phả - QN",
+   "pred": "Sở 5 Cẩm Tày - Cẩm Phá - QN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014jizcq",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "2344375",
+   "pred": "234,375"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014jizcq",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Số 5 Cẩm Tây - Cẩm Phả - QN",
+   "pred": "Sở 5 Cẩm Tày - Cẩm Phá - QN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014jizcq",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "2344375",
+   "pred": "234375"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014kplqb",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Đc: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014kplqb",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Đc: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ldvxl",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ldvxl",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014lfctk",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 1060-1062 Trần Phú Số 10604082 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014lfctk",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 1060-1062 Trần Phú Số 10604082 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú, TP. Cám Phà, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014lijow",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "TÊN ĐẠI LÝ: 5156 VINMART",
+   "pred": "VINMART"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014lijow",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "ĐỊA CHỈ ĐẠI LÝ : 5156 TỔ 7 Minh TIẾN A CAM BINH CAM PHA QN",
+   "pred": "TỔ 7 MINH TIÊN A, Cẩm Bình, Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014lijow",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "NGÀY 13/88/2020 GIỜ: 10:52:29",
+   "pred": "13/08/2020 10:52:29"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014lijow",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "TÊN ĐẠI LÝ: 5156 VINMART",
+   "pred": "BIDVO"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014lijow",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐỊA CHỈ ĐẠI LÝ : 5156 TỔ 7 Minh TIẾN A CAM BINH CAM PHA QN",
+   "pred": "ĐỊA CHỈ ĐỘI LÝ: 5156-TU 7 MINH TIÊN A, cam binh cam pha on"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014lijow",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "NGÀY 13/88/2020 GIỜ: 10:52:29",
+   "pred": "13/08/2020 10:52:29"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014lopme",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "DA QĐ đọc tuyến ĐS Tổ 3 Khu 2 P.Cẩm Sơn, TP. Cẩm Phả, T.QN",
+   "pred": "DA QĐ dọc tuyến ĐS Tổ 3 Khu 2 P. Cẩm Sơn, TP. Cẩm Phả, T. QN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014lopme",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "DA QĐ đọc tuyến ĐS Tổ 3 Khu 2 P.Cẩm Sơn, TP. Cẩm Phả, T.QN",
+   "pred": "P. Cầm Sơn, TP. Cảm Phà, T. QN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mgasx",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "partial",
+   "gold": "Co.op mart",
+   "pred": "Co.opMart NGUYEN DINH CHIEU"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mgasx",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Co.opMart NGUYEN DINH CHIEU 168 Nguyen Đinh Chiêu 0.3",
+   "pred": "16.000 thue 0305772762 DT:39307, 2019 thoi nghieu 3 1880138 thien 39301386"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mgasx",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "Co.op mart",
+   "pred": "Co.00Mart NGUYEN DINH CHIEU"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mgasx",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Co.opMart NGUYEN DINH CHIEU 168 Nguyen Đinh Chiêu 0.3",
+   "pred": "16.000 thue 0305772762 DT:39307, 2019 thoi nghieu 3 1880138 thien 39301386 Email; Hofling msockhaboo555568"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mghmv",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 1060-1062 Trần Phú Số 10604062 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mghmv",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 1060-1062 Trần Phú Số 10604062 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú, TP. Cảm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mmuxs",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mmuxs",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mpahy",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "co.opmark",
+   "pred": "Siêu thị Co.op Mart"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mpahy",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "missed",
+   "gold": "Co.opMart NGUYEN DINH CHIEU 168 Nguyen Dinh Chieu Q.3",
+   "pred": null
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mpahy",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "co.opmark",
+   "pred": "Siêu thế Caop Manh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mpahy",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "missed",
+   "gold": "Co.opMart NGUYEN DINH CHIEU 168 Nguyen Dinh Chieu Q.3",
+   "pred": null
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mpsud",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VM4 QNH 86 Trần Phú"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mpsud",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QQNH 86 Trần Phú Số 86 Đường Trần Phú , P.Cẩm Tây TP Cẩm Phả, T.Quang Ninh",
+   "pred": "Số 86 Đường Trần Phú, P. Cẩm Tây, TP Cẩm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mpsud",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VM4 QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mpsud",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QQNH 86 Trần Phú Số 86 Đường Trần Phú , P.Cẩm Tây TP Cẩm Phả, T.Quang Ninh",
+   "pred": "Số 86 Đường Trần Phú, P. Cảm Tây, TP Cầm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014mtdoy",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "9.238.110",
+   "pred": "9987000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nazga",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH 590 Trần Phú Số 590 Trần Phú P. Cẩm Thuỷ TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 590 Trần Phú, P. Cẩm Thủy, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nazga",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "313.313",
+   "pred": "313.314"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nazga",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cảm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nazga",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH 590 Trần Phú Số 590 Trần Phú P. Cẩm Thuỷ TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 590 Trần Phú, P. Cảm Thủy"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nazga",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "313.313",
+   "pred": "313314"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014neytd",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "NHÀ SÁCH GD-TC CẨM PHẢ",
+   "pred": "NHÀ SÁCH GĐ.TC CẨM PHẢI"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014neytd",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú- Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014neytd",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "NHÀ SÁCH GD-TC CẨM PHẢ",
+   "pred": "NHÀ SÁCH GĐ.TC CẨM PHẢI"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014neytd",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú- Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ngihg",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH 1060-1062 Trần Phú Số 1060-1062 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1082 Đường Trần Phú, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ngihg",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "partial",
+   "gold": "154.100",
+   "pred": "54.100"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ngihg",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cầm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ngihg",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH 1060-1062 Trần Phú Số 1060-1062 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1082 Đường Trấn Phú"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ngihg",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "partial",
+   "gold": "154.100",
+   "pred": "54100"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nsqiz",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH 1060-1062 Trần Phú Số 10604062 Dương Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nsqiz",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH 1060-1062 Trần Phú Số 10604062 Dương Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "1080-1082 Trần Phú Số 1060-1062 Đường Trần Phú"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nuiop",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "TÊN ĐẠI LÝ: VGH_VINMART",
+   "pred": "SISE-VINMENT"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nuiop",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "ĐỊA CHỈ ĐẠI LÝ : 5156- 10 7 MINH TIẾN A CẨM BÌNH, CẨM PHẢ, QN",
+   "pred": "5196-10 7 Thanh Tidia Ôm Bình Còm Pháp Có"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nuiop",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "TÊN ĐẠI LÝ: VGH_VINMART",
+   "pred": "SISE-VINMENT"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nuiop",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "ĐỊA CHỈ ĐẠI LÝ : 5156- 10 7 MINH TIẾN A CẨM BÌNH, CẨM PHẢ, QN",
+   "pred": "5196-10 7 Thanh Tidia Ôm Bình Còm Pháp Có"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nuiop",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "13/08/2020 28:29:45",
+   "pred": "1308/2020 20:29:45"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nymps",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ sửi Phú Thị Gia Lâm",
+   "pred": "Chợ Sủi Phú Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014nymps",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ sửi Phú Thị Gia Lâm",
+   "pred": "Chợ Sủi Phú Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014onrob",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "NGÀY KINH DOANH 12/08/2020",
+   "pred": "17/2000/12/00/2000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014onrob",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "partial",
+   "gold": "B.119.014",
+   "pred": "3.119.014"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014onrob",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "NGÀY KINH DOANH 12/08/2020",
+   "pred": "10 THỔM 1 THAN 550 13.00"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014onrob",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "partial",
+   "gold": "B.119.014",
+   "pred": "3119014"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014otrlb",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "missed",
+   "gold": "Ngày: 13/08/2020 - 18:18",
+   "pred": null
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014otrlb",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "MINIMART ANAN",
+   "pred": "A MINIMART ANAN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014otrlb",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "missed",
+   "gold": "Ngày: 13/08/2020 - 18:18",
+   "pred": null
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014oxghl",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Tổ 7. Khu Minh Tiến A Tổ 7, khu Minh Tiến A P. Cẩm Bình, TP Cẩm Phả, QNH",
+   "pred": "T67, Khu Minh Tiến A, P. Cẩm Bình, TP. Cẩm Phả, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014oxghl",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce P. Cầm Bình, TP. Cầm Phi, GNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014oxghl",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Tổ 7. Khu Minh Tiến A Tổ 7, khu Minh Tiến A P. Cẩm Bình, TP Cẩm Phả, QNH",
+   "pred": "VIÊN CHỈ ÔNG T67, KHU MINH TIẾN A T67, Khu Man Tiền A"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014pbtzz",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trán Phú-Cẩm Phà"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014pbtzz",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trán Phú-Cẩm Phà"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014phuqi",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+QNH 10604062 Trần Phú Số 1060-1062 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014phuqi",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH 10604062 Trần Phú Số 1060-1062 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú, TP. Cầm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014pomqp",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014pomqp",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qcxwq",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VINMART"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qcxwq",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 1060-1062 Trần Phú Số 10404042 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qcxwq",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cầm Phá, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qcxwq",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 1060-1062 Trần Phú Số 10404042 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qmagv",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ sửi phú Thị Gia Lâm",
+   "pred": "Chợ Súi Phú Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qmagv",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ sửi phú Thị Gia Lâm",
+   "pred": "Chợ Súi Phú Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qmchf",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 590 Trần Phú Số 590 Trần Phú, P. Cẩm Thuỷ TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 590 Trần Phú, P. Cẩm Thủy, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qmchf",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Câm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qmchf",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 590 Trần Phú Số 590 Trần Phú, P. Cẩm Thuỷ TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 590 Trần Phú, P. Cầm Thuy"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qmicf",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+ CNH 112 Thanh Niệm Số 112 Thanh Niên, P. Cẩm Thành TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 112 Thanh Niên, P. Cẩm Thành, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qmicf",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cảm Phà, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qmicf",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ CNH 112 Thanh Niệm Số 112 Thanh Niên, P. Cẩm Thành TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 112 Thanh Niên, P. Cầm Thành"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qyfft",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "VM+QNH Dư án KDC lấn biển cọc 6 DA khu DCLB cọc 8, P.Cẩm Sơn TP.Cẩm Phả, T.Quảng Ninh",
+   "pred": "Dự án KDC lấn biển cọc 6 DA khu DCLB cọc 8, P. Cẩm Sơn TP. Cẩm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qyfft",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cảm Phá, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014qyfft",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH Dư án KDC lấn biển cọc 6 DA khu DCLB cọc 8, P.Cẩm Sơn TP.Cẩm Phả, T.Quảng Ninh",
+   "pred": "Dự án KDC lấn biên cọc 6 DA khu DCLB cọc 8, P. Câm Sơn"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014rijtj",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "Satra Group",
+   "pred": "Satrafoods"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014rijtj",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Satrafoods 2B Đường Bình Lợi 2B Bình Lợi, Phường 13, Quận Bình Thạnh",
+   "pred": "2B Đường Bình Lợi, Bình Lợi, Phường 13, Quận Bình Thạnh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014rijtj",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "Satra Group",
+   "pred": "Satrafoods"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014rijtj",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Satrafoods 2B Đường Bình Lợi 2B Bình Lợi, Phường 13, Quận Bình Thạnh",
+   "pred": "2B Đường Bình Lợi, Sat Bình Lợi, Phường 13, Quận Bình Thạnh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014rqund",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "MINIMART ANAM",
+   "pred": "Chợ số mình mị"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014rqund",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "MINIMART ANAM",
+   "pred": "Chợ số mình mị"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ruiqd",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "VinCommerce",
+   "pred": "VM% ONH 88 TRần Phú"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ruiqd",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 86 Trần Phú Số 86 Đường Trần Phú, P.Cẩm Tây TP Cẩm Phả, T.Quảng Ninh",
+   "pred": "Số 86 Đường Trần Phú, P. Cầm Tây Vincommerce TP Cầm Phá, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ruiqd",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP Cầm Phá, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ruiqd",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 86 Trần Phú Số 86 Đường Trần Phú, P.Cẩm Tây TP Cẩm Phả, T.Quảng Ninh",
+   "pred": "Số 86 Đường Trần Phú, P. Cầm Tây"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014sfcjb",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "MINIMART ANANAI",
+   "pred": "MINIMART ANAN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014sfcjb",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "MINIMART ANANAI",
+   "pred": "AMINIMART ANAIR"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014sncle",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "Cty LD TNHH KFC Viet Nam",
+   "pred": "KFC BIG C VINH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014sncle",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "92 Ba Trieu, Hai Ba Trung, Ha N",
+   "pred": "So 2, Quang Trung, TP Vinh, Nghe"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014sncle",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "Cty LD TNHH KFC Viet Nam",
+   "pred": "KFC BIG C VINH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014sncle",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "92 Ba Trieu, Hai Ba Trung, Ha N",
+   "pred": "So 2, Quang Trung, TP Vinh, Nghe"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014snrrj",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014snrrj",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "pred": "212 Đường Trấn Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014sxfmn",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "NHÀ SÁCH GD-TC CẨM PHẢ",
+   "pred": "NHÀ SÁCH GD-TC CẨM PHÁP"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014sxfmn",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Đc: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014sxfmn",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "NHÀ SÁCH GD-TC CẨM PHẢ",
+   "pred": "VÀ NHÀ SÁCH GD-TC CẨM PHÁP"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014sxfmn",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Đc: 212 Đường Trần Phú - Cẩm Phả",
+   "pred": "212 Đường Trần Phú-Cẩm Phả"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tetea",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Thôn Phú Thuỵ, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "pred": "Thôn Phú Thụy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tetea",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "35,500 35,500",
+   "pred": "35,500"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tetea",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Thôn Phú Thuỵ, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "pred": "Thón Phú Thuy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tetea",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "35,500 35,500",
+   "pred": "35500"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tobyw",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Block D3. Khu BKTX ĐHQG. P Đông Hoà, TX Lĩ An, Bình Dương",
+   "pred": "Block D3-Khu B KTX ĐHQG, P. Đông Hòa, TX.Dĩ An, Bình Dương"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tobyw",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "28,000 28,000",
+   "pred": "28,000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tobyw",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Block D3. Khu BKTX ĐHQG. P Đông Hoà, TX Lĩ An, Bình Dương",
+   "pred": "Block D3-Khu B KTX ĐHQG, P. Đông Hòa, TX.Dĩ An, Bình Dương"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tobyw",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Ngày : 14/08/2020 - Giờ: 10:42",
+   "pred": "14/08:2020-Giờ: 10:42"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tobyw",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "28,000 28,000",
+   "pred": "28,000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014toiko",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+ QNH Tổ 7, Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH",
+   "pred": "Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014toiko",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce P. Cẩm Bình, TP. Cẩm Pha, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014toiko",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Tổ 7, Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH",
+   "pred": "Tổ 7, Khu Minh Tiến A, Vincommerce P. Cẩm Bình, TP. Cẩm Pha, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tugre",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH Dự án KDC lấn biển coc 6 DA khu DCLB coc 8, P.Cẩm Sơn TP. Cẩm Phả, T. Quảng Ninh",
+   "pred": "Dự án KDC lấn biển cọc ô DA khu DCLB cọc 6, P. Cẩm Sơn TP. Cẩm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tugre",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "12.800 12.800",
+   "pred": "12.800"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tugre",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cảm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tugre",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH Dự án KDC lấn biển coc 6 DA khu DCLB coc 8, P.Cẩm Sơn TP. Cẩm Phả, T. Quảng Ninh",
+   "pred": "Dự án KDC lấn biển cọc ô DA khu DCLB cọc 6, P. Cảm Sơn"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tugre",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "12.800 12.800",
+   "pred": "12800"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tvfga",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+ QNH Tổ 7, khu Minh Tiến A Tổ 7, Khu Minh Tiến A P.Cẩm Bình, TP.Cẩm Phả, QNH",
+   "pred": "Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014tvfga",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Tổ 7, khu Minh Tiến A Tổ 7, Khu Minh Tiến A P.Cẩm Bình, TP.Cẩm Phả, QNH",
+   "pred": "P. Cẩm Bình, TP. Cấm Phá, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014udhjy",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "5.360.869",
+   "pred": "5.362.669"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014udhjy",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "5.360.869",
+   "pred": "6270000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014uevcn",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "PHỐ MỎ",
+   "pred": "PHÔ MỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014uevcn",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "PHỐ MỎ",
+   "pred": "PHÔ MỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014uqhki",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "Linh kiện Điện Tử 3M cho.com.vn",
+   "pred": "Trong Hà Nội"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014uqhki",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Ngày: 22-07-2020",
+   "pred": "27-07-2020"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014uqhki",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "Linh kiện Điện Tử 3M cho.com.vn",
+   "pred": "Tiệm Cận U12A3"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014uqhki",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Ngày: 22-07-2020",
+   "pred": "27-07-2020"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014vpjby",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Sủi Phú Thị Gia Làm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014vwnco",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cầm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014vwnco",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "Số 1060-1082 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1082 Đường Trần Phú"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014wcrlk",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 1060-1062 Trần Phú Số 10604062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014wcrlk",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH 1060-1062 Trần Phú Số 10604062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "1060-1062 Đường Trần Phú, Cảm Phà, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014wmjil",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "SIEU THI BACH HOA TONG HOP",
+   "pred": "SIÊU THỊ BÁCH HÓA TỔNG HỢP THỊ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014wmjil",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "SIEU THI BACH HOA TONG HOP",
+   "pred": "THI SIÊU THI BACH HOA TỔNG HỢP THI"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014wmjil",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Số 5 Cẩm Tây - Cẩm Phả - QN",
+   "pred": "Số 5 Cẩm Tây - Cẩm Phá- QN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014woqkn",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+QNH Tổ 8 Khu 3B Cẩm Trung Tổ 8, Khu 3B, P.Cẩm Trung TP.Cẩm Phả, T.Quảng Ninh",
+   "pred": "Tổ 8, Khu 3B, P. Cẩm Trung, TP. Cẩm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014woqkn",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce TP. Cảm Phả, T. Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014woqkn",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH Tổ 8 Khu 3B Cẩm Trung Tổ 8, Khu 3B, P.Cẩm Trung TP.Cẩm Phả, T.Quảng Ninh",
+   "pred": "Tổ 8, Khu 3B, P. Cầm Trung"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014wywkr",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Tổ 7, Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P. Cẩm Bình. TP, Cẩm Phả, QNH",
+   "pred": "Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phá, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014wywkr",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "partial",
+   "gold": "VinCommerce",
+   "pred": "Vincommerce P. Cầm Bình"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014wywkr",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Tổ 7, Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P. Cẩm Bình. TP, Cẩm Phả, QNH",
+   "pred": "Tổ 7, Khu Minh Tiến A, TP. Cẩm Phá, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014xhzbt",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 112 Thanh Niên Số 112 Thanh Niên. P. Cẩm Thanh TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 112 Thanh Niên, P. Cẩm Thành, TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014xhzbt",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 112 Thanh Niên Số 112 Thanh Niên. P. Cẩm Thanh TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 112 Thanh Niên, P. Cầm Thành, TP. Cảm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yaivb",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "P8 Phan Chu Trinh, Hiệp Phú, Quận 9, Hồ",
+   "pred": "28 Phan Chu Trinh, Hiệp Phú, Quận 9, Hồ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yaivb",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "P8 Phan Chu Trinh, Hiệp Phú, Quận 9, Hồ",
+   "pred": "28 Phan Chu Trinh, Hiệp Phú, Quận 9, Hồ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yccar",
+   "method": "deepseek-fs",
+   "field": "total",
+   "type": "wrong",
+   "gold": "200,000",
+   "pred": "74,000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yccar",
+   "method": "qwen2.5-7b",
+   "field": "total",
+   "type": "wrong",
+   "gold": "200,000",
+   "pred": "74,000"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yfexx",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "TÊN ĐẠI LÝ",
+   "pred": "VINMART"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yfexx",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "TỔ 7 KHU MINH TIẾN A, P. CẨM",
+   "pred": "TỔ 7 KHU NINH TIÊN A, P. CẨM ĐIỀN"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yfexx",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "TỔNG: 229.885 D",
+   "pred": "13/08/2020 10:02:38"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yfexx",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "TÊN ĐẠI LÝ",
+   "pred": "VINMART"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yfexx",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "missed",
+   "gold": "TỔ 7 KHU MINH TIẾN A, P. CẨM",
+   "pred": null
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yfexx",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "TỔNG: 229.885 D",
+   "pred": "1308/2020 10:02:38"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yibwb",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "PHẢ",
+   "pred": "SCTC CÔ THỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yibwb",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "PHẢ",
+   "pred": "SCTC CÔ THỎ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yibwb",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "104 Trần Phú - phường Cẩm Tây - Thành phố Cẩm Phả - Quảng Ninh",
+   "pred": "104 Trần Phú - Phường Cấm Tây - Thành Phố Cấm, Phú - Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yivlq",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lâm",
+   "pred": "Chợ Sủi Phú Thị Gia Làm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ymhqd",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+QNH 1060-1060-1062 Trần Phú Số 1060-1062 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ymhqd",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+QNH 1060-1060-1062 Trần Phú Số 1060-1062 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "pred": "1060-1062 Đường Trần Phú, TP. Cầm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yqlhe",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM + QNH 1060-1062 Trần Phú Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014yqlhe",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM + QNH 1060-1062 Trần Phú Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "pred": "1060-1062 Đường Trần Phú, TP. Cảm Phá, Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ysbpa",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "NHÀ SÁCH GD-TC CẨM PHẢ",
+   "pred": "INODING ÂM PHÁ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ysbpa",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "missed",
+   "gold": "ĐC: 212 Đường Trần Phú, Cẩm Phả",
+   "pred": null
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ysbpa",
+   "method": "deepseek-fs",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Thòi gian: 11 14 53 09/08/2020",
+   "pred": "00/08/020"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ysbpa",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "NHÀ SÁCH GD-TC CẨM PHẢ",
+   "pred": "INODING ÂM PHÁ"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ysbpa",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "missed",
+   "gold": "ĐC: 212 Đường Trần Phú, Cẩm Phả",
+   "pred": null
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014ysbpa",
+   "method": "qwen2.5-7b",
+   "field": "date",
+   "type": "wrong",
+   "gold": "Thòi gian: 11 14 53 09/08/2020",
+   "pred": "00/08/020"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014zckhw",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lam",
+   "pred": "Chợ Sủi Phú Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014zckhw",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "Chợ Sủi Phú Thị Gia Lam",
+   "pred": "Chợ Sủi Phú Thị Gia Lâm"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014zmplv",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "partial",
+   "gold": "VM+ QNH Tổ 7. Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH",
+   "pred": "Tổ 7, Khu Minh Tiến A, P. Cẩm Bình, TP. Cẩm Phả, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014zmplv",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "VinCommerce",
+   "pred": "Incommerce"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014zmplv",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "wrong",
+   "gold": "VM+ QNH Tổ 7. Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH",
+   "pred": "VM% anh Tỏ 7, Khu Minh Tiến A, P. Cẩm Bình, TP. Cẩm Phà, QNH"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014zoebw",
+   "method": "deepseek-fs",
+   "field": "seller",
+   "type": "near_match",
+   "gold": "SCTC CÔ THỎ 104 TRẦN PHÚ - CẨM PHẢ",
+   "pred": "SCTC CÔ THỎ 104 TRẦN PHÚ - CẨM"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014zoebw",
+   "method": "qwen2.5-7b",
+   "field": "seller",
+   "type": "wrong",
+   "gold": "SCTC CÔ THỎ 104 TRẦN PHÚ - CẨM PHẢ",
+   "pred": "CUKCUK - Một sán phẩm của MISA"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014zoebw",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "near_match",
+   "gold": "104 Trần Phú - phường Cẩm Tây - Thành phố Cẩm Phả - Quảng Ninh",
+   "pred": "104 Trần Phú - phường Cấm Tây - Thành phố Cấm Phả - Quảng Ninh"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014zppme",
+   "method": "deepseek-fs",
+   "field": "address",
+   "type": "wrong",
+   "gold": "Co.op Food HN THE K-PARK",
+   "pred": "Tang 1, SH42 - Toa K3, Cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi noi Van Phu; P. Phu La, Q. Ha Dong, Tp. Ha Noi"
+  },
+  {
+   "doc": "mcocr/mcocr_public_145014zppme",
+   "method": "qwen2.5-7b",
+   "field": "address",
+   "type": "partial",
+   "gold": "Co.op Food HN THE K-PARK",
+   "pred": "Co.op Food HN THE K-PARK Tang 1,SH42 - Toa K3,Cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi noi Van Phu; P. Phu La, 0, Ha Dong, Tp. Ha Noi"
+  }
+ ],
+ "tokens": {
+  "deepseek-zs": {
+   "n": 547,
+   "avg_in": 516,
+   "avg_out": 72,
+   "sum_in": 282397,
+   "sum_out": 39411
+  },
+  "deepseek-fs": {
+   "n": 547,
+   "avg_in": 1518,
+   "avg_out": 71,
+   "sum_in": 830441,
+   "sum_out": 38963
+  },
+  "qwen2.5-3b": {
+   "n": 547,
+   "avg_in": 546,
+   "avg_out": 94,
+   "sum_in": 298614,
+   "sum_out": 51340
+  },
+  "qwen2.5-7b": {
+   "n": 547,
+   "avg_in": 546,
+   "avg_out": 89,
+   "sum_in": 298614,
+   "sum_out": 48894
+  }
+ },
+ "dataset_stats": {
+  "sroie": {
+   "n_total": 973,
+   "n_train": 626,
+   "n_test": 347,
+   "avg_words": 115.2,
+   "avg_lines": 31.3,
+   "gold_coverage_test": {
+    "seller": 347,
+    "address": 347,
+    "date": 347,
+    "total": 347
+   }
+  },
+  "mcocr": {
+   "n_total": 1151,
+   "n_train": 951,
+   "n_test": 200,
+   "avg_words": 99.8,
+   "avg_lines": 23.2,
+   "gold_coverage_test": {
+    "seller": 183,
+    "address": 183,
+    "date": 189,
+    "total": 170
+   }
+  }
+ },
+ "side_experiments": {
+  "gemini-zs": {
+   "n": 41,
+   "macro_f1": 89.5,
+   "blocked": 1
+  },
+  "gptoss120b-zs": {
+   "n": 347,
+   "macro_f1": 86.9,
+   "blocked": 0
+  }
+ }
+}
