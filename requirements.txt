@@ -4,3 +4,4 @@ rapidfuzz>=3.9
 matplotlib>=3.8
 kaggle>=1.7
 six
+python-pptx>=1.0  # chỉ cần để sinh lại slide

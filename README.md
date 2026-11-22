@@ -137,15 +137,18 @@ gói miễn phí bị giới hạn mạnh, xem Chương 7 báo cáo).
 python src/evaluate.py                  # bảng P/R/F1 theo method × dataset
 python src/analyze.py                   # report/results.json + report/figures/*.png
 
-# (tuỳ chọn) sinh lại báo cáo Word và slide
+# (tuỳ chọn) sinh lại slide theo template HUST (report/build/template_hust.pptx)
+pip install python-pptx
+python report/build/make_slides.py      # -> report/Slide_TrichRutThongTin_HoaDon.pptx
+
+# (tuỳ chọn) sinh lại báo cáo Word
 cd report/build
 npm install
 node make_report.js                     # -> report/BaoCao_TrichRutThongTin_HoaDon.docx
-node make_slides.js                     # -> report/Slide_TrichRutThongTin_HoaDon.pptx
 ```
 
-> `make_slides.js` ghi bảng màu vào theme bằng `apply_theme.js` nếu biến môi trường `PPTX_SKILL` trỏ tới thư mục
-> skill pptx; nếu không đặt biến này, slide vẫn được tạo bình thường với bảng màu mặc định của Office.
+> Slide dùng template HUST khổ 4:3: giữ trang bìa và trang cảm ơn của template, các slide nội dung dùng layout
+> có dải đỏ + logo Bách Khoa. Tiêu đề dùng font Lato của template (máy chưa cài sẽ tự thay font khác).
 
 ### 7. Xem cơ sở dữ liệu
 
